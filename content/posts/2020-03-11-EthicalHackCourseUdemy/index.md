@@ -421,4 +421,4 @@ Scan the keystrokes on a windows machine
 
 **Fith attack : Hijiack password from mozilla**
 
-**If you have for exemple access to a machine with a website open and a login prompt, go to saved password and if there is already a password go to inspect element and on the <input type="password"> replathe password with "text" to see the password in plain text.**
+**If you have for exemple access to a machine with a website open and a login prompt, go to saved password and if there is already a password go to inspect element and on the input type="password" replathe password with "text" to see the password in plain text.**
