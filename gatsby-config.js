@@ -1,33 +1,30 @@
 module.exports = {
+  pathPrefix: "/my_project",
   siteMetadata: {
-    title: `Novela by Narative`,
-    name: `Narative`,
-    siteUrl: `https://novela.narative.co`,
-    description: `This is my description that will be used in the meta tags and important for search results`,
+    title: `Ludovic COULON - Blog`,
+    name: `Ludovic COULON`,
+    siteUrl: `https://lascc.github.io`,
+    description: `Blog that gathers different articles about computer security and writup of challenges I've done..`,
     hero: {
-      heading: `Welcome to Novela, the simplest way to start publishing with Gatsby.`,
-      maxWidth: 652,
+      heading: `A place to drop off things that I find interesting and that others might enjoy...`,
+      maxWidth: 680,
     },
     social: [
       {
-        name: `twitter`,
-        url: `https://twitter.com/narative`,
-      },
-      {
         name: `github`,
-        url: `https://github.com/narative`,
-      },
-      {
-        name: `instagram`,
-        url: `https://instagram.com/narative.co`,
+        url: `https://github.com/LasCC`,
       },
       {
         name: `linkedin`,
-        url: `https://www.linkedin.com/company/narative/`,
+        url: `https://www.linkedin.com/in/ludovic-coulon-b361ba183/`,
       },
       {
-        name: `dribbble`,
-        url: `https://dribbble.com/narativestudio`,
+        name: `youtube`,
+        url: `https://www.youtube.com/channel/UCkDvlI9LUuwZ4GKFUbP_Ovg`,
+      },
+      {
+        name: `mailto`,
+        url: `mailto:coulonludovicc@gmail.com`,
       },
     ],
   },
@@ -48,8 +45,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Novela by Narative`,
-        short_name: `Novela`,
+        name: `Ludovic COULON - Blog`,
+        short_name: `Cyber security blog`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#fff`,
@@ -59,8 +56,7 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-netlify-cms`,
-      options: {
-      },
+      options: {},
     },
   ],
 };
