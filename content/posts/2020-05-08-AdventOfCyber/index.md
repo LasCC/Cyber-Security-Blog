@@ -24,14 +24,22 @@ excerpt: "Advent of Cyber Challenge all the challengs solved write up"
 
 [TryHackMe | Day 12 Elfcryption](/advent-of-cyber-day-12-elfcryption)
 
-[TryHackMe | Advent of Cyber](/advent-of-cyber-day-12-elfcryption)
+[TryHackMe | Day 13 Accumulate](/advent-of-cyber-day-13-accumulate)
 
-[TryHackMe | Advent of Cyber](/advent-of-cyber-day-12-elfcryption)
+[TryHackMe | Day 14 Unknown Storage](/advent-of-cyber-day-14-unknown-storage)
 
-[TryHackMe | Advent of Cyber](/advent-of-cyber-day-12-elfcryption)
+[TryHackMe | Day 15 LFI](/advent-of-cyber-day-15-lfi)
 
-[TryHackMe | Advent of Cyber](/advent-of-cyber-day-12-elfcryption)
+[TryHackMe | Day 16 Unknown Storage](/advent-of-cyber-day-14-unknown-storage)
 
-[TryHackMe | Advent of Cyber](/advent-of-cyber-day-12-elfcryption)
+[TryHackMe | Day 17 Hydra-ha-ha-haa](/advent-of-cyber-day-17-hydra-ha-ha-haa)
 
-[TryHackMe | Advent of Cyber](/advent-of-cyber-day-12-elfcryption)
+[TryHackMe | Day 18 ELF JS](/advent-of-cyber-day-18-elf-js)
+
+[TryHackMe | Day 19 Commands](/advent-of-cyber-day-19-commands)
+
+[TryHackMe | Day 20 Unknown Storage](/advent-of-cyber-day-14-unknown-storage)
+
+[TryHackMe | Day 21 Unknown Storage](/advent-of-cyber-day-14-unknown-storage)
+
+[TryHackMe | Day 22 Unknown Storage](/advent-of-cyber-day-14-unknown-storage)
