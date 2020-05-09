@@ -1,0 +1,121 @@
+{
+  "_from": "@narative/gatsby-theme-novela@^0.*",
+  "_id": "@narative/gatsby-theme-novela@0.15.2",
+  "_inBundle": false,
+  "_integrity": "sha512-UJMoh43phpi79VUMgCBXfDM0VPD3Va2zRCxz1EVyc8P1Hf1KI6Max0gODrfHpfFYG7thv3zuWvvfictYY9wDiw==",
+  "_location": "/@narative/gatsby-theme-novela",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@narative/gatsby-theme-novela@^0.*",
+    "name": "@narative/gatsby-theme-novela",
+    "escapedName": "@narative%2fgatsby-theme-novela",
+    "scope": "@narative",
+    "rawSpec": "^0.*",
+    "saveSpec": null,
+    "fetchSpec": "^0.*"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@narative/gatsby-theme-novela/-/gatsby-theme-novela-0.15.2.tgz",
+  "_shasum": "fba982565ebe8facadf609d12c1deab557fe8a81",
+  "_spec": "@narative/gatsby-theme-novela@^0.*",
+  "_where": "/Users/zeeph/Desktop/blog-cyber-sec",
+  "author": {
+    "name": "dennis@narative.co"
+  },
+  "bugs": {
+    "url": "https://github.com/narative/gatsby-theme-novela/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@emotion/core": "^10.0.14",
+    "@emotion/styled": "^10.0.14",
+    "@mdx-js/mdx": "^1.1.0",
+    "@mdx-js/react": "^1.0.27",
+    "@raae/gatsby-remark-oembed": "^0.1.1",
+    "adm-zip": "^0.4.13",
+    "babel-plugin-emotion": "^10.0.14",
+    "contentful-cli": "^0.36.0",
+    "gatsby": "^2.15.7",
+    "gatsby-image": "^2.2.7",
+    "gatsby-paginate": "^1.1.0",
+    "gatsby-plugin-emotion": "^4.1.2",
+    "gatsby-plugin-feed": "2.3.7",
+    "gatsby-plugin-mailchimp": "^5.1.2",
+    "gatsby-plugin-mdx": "^1.0.32",
+    "gatsby-plugin-react-helmet": "^3.1.2",
+    "gatsby-plugin-sharp": "^2.2.9",
+    "gatsby-plugin-theme-ui": "^0.2.40",
+    "gatsby-plugin-typescript": "^2.1.2",
+    "gatsby-remark-autolink-headers": "^2.1.3",
+    "gatsby-remark-check-links": "^1.1.5",
+    "gatsby-remark-copy-linked-files": "^2.1.3",
+    "gatsby-remark-embed-video": "^2.0.1",
+    "gatsby-remark-external-links": "0.0.4",
+    "gatsby-remark-images": "^3.1.7",
+    "gatsby-remark-numbered-footnotes": "^1.0.0",
+    "gatsby-remark-prismjs": "^3.3.3",
+    "gatsby-remark-smartypants": "^2.1.2",
+    "gatsby-remark-typescript": "^0.0.12",
+    "gatsby-source-filesystem": "^2.1.6",
+    "gatsby-transformer-remark": "^2.6.9",
+    "gatsby-transformer-sharp": "^2.2.4",
+    "gatsby-transformer-yaml": "^2.2.4",
+    "lodash": "^4.17.15",
+    "prism-react-renderer": "^0.1.7",
+    "react-helmet": "^5.2.1",
+    "react-live": "^2.2.0",
+    "react-medium-image-zoom": "^4.0.2",
+    "react-outside-click-handler": "^1.2.4",
+    "remark-slug": "^5.1.2",
+    "request": "^2.88.0",
+    "slugify": "^1.3.6",
+    "theme-ui": "^0.2.40",
+    "typeface-merriweather": "^0.0.72"
+  },
+  "deprecated": false,
+  "description": "<a href=\"https://www.narative.co/labs/novela/\" target=\"_blank\"> <img src=\"https://raw.githubusercontent.com/narative/gatsby-theme-novela-example/master/assets/gatsby-theme-novela-hero.jpg\" alt=\"gatsby-novela-theme hero image\" /> </a>",
+  "devDependencies": {
+    "@types/react-helmet": "^5.0.15",
+    "gatsby": "^2.15.7",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "gitHead": "6f34f849298b4b0bd468bcffe0b002620e6a9696",
+  "homepage": "https://github.com/narative/gatsby-theme-novela#readme",
+  "keywords": [
+    "narative",
+    "gatsby",
+    "gatsby-plugin",
+    "gatsby-theme",
+    "gatsby-theme-novela",
+    "blog",
+    "medium",
+    "articles",
+    "react"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "@narative/gatsby-theme-novela",
+  "peerDependencies": {
+    "gatsby": "^2.15.7",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/narative/gatsby-theme-novela.git"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "contentful:export": "contentful space export --config contentful.json --skip-content --skip-roles --skip-webhooks",
+    "contentful:export:model": "contentful space export --config contentful.json",
+    "contentful:import": "contentful space import --config contentful.json",
+    "publish": "npm publish --access public"
+  },
+  "version": "0.15.2"
+}
