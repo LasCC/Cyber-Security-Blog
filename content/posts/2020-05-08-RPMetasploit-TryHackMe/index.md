@@ -1,5 +1,5 @@
 ---
-title: "RP: Metasploit - TryHackMe"
+title: "RP Metasploit - TryHackMe"
 author: Ludovic COULON
 date: 2020-05-08
 hero: ./images/hero.png

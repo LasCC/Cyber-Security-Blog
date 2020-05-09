@@ -1,5 +1,5 @@
 ---
-title: "RP: PS Empire - TryHackMe"
+title: "RP PS Empire - TryHackMe"
 author: Ludovic COULON
 date: 2020-05-08
 hero: ./images/hero.png
