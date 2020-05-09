@@ -2,7 +2,7 @@
 title: "Advent of Cyber Day 14 Unknown Storage"
 author: Ludovic COULON
 date: 2020-05-08
-hero: ./images/hero.png
+hero: ./images/hero.jpg
 excerpt: "Advent of Cyber Day 14 Unknown Storage"
 secret: true
 ---
