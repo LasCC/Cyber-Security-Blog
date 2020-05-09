@@ -1,9 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Ludovic COULON - Blog`,
+    title: `Ludovic COULON - Cyber Security Blog`,
     name: `Ludovic COULON`,
     siteUrl: `https://ludovic-cyber-sec.web.app`,
     description: `Blog that gathers different articles about computer security and writup of challenges I've done..`,
+    image: `https://i.imgur.com/BgQ8dIS.png`,
     hero: {
       heading: `A place to drop off things that I find interesting and that others might enjoy...`,
       maxWidth: 680,
