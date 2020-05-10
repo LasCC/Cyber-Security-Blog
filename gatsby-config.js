@@ -4,7 +4,6 @@ module.exports = {
     name: `Ludovic COULON`,
     siteUrl: `https://ludovic-cyber-sec.web.app`,
     description: `Blog that gathers different articles about computer security and writup of challenges I've done..`,
-    image: `./src/meta.png`,
     hero: {
       heading: `A place to drop off things that I find interesting and that others might enjoy...`,
       maxWidth: 680,
