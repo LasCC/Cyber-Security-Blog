@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 import mediaqueries from "@narative/gatsby-theme-novela/src/styles/media";
 
-const Logo = ({ fill = "#fff" }: { fill?: string }) => {
+const Logo = () => {
   return (
     <LogoContainer>
       <svg
