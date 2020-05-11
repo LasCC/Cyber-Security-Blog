@@ -41,7 +41,9 @@ nmap -A -vv 10.10.19.144
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 
-![https://imgur.com/6d5GxKt.png](https://imgur.com/6d5GxKt.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/6d5GxKt.png" alt="blog_image" />
+</div>
 
 [Hydra - Brute Force HTTPs](https://redteamtutorials.com/2018/10/25/hydra-brute-force-https/)
 
@@ -55,7 +57,9 @@ hydra -l molly -P /usr/share/wordlists/rockyou.txt 10.10.19.144 http-post-form "
 
 ### #1 Use Hydra to bruteforce molly's web password. What is flag 1? (The flag is mistyped, its THM, not TMH)
 
-![https://imgur.com/yynj6n6.png](https://imgur.com/yynj6n6.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/yynj6n6.png" alt="blog_image" />
+</div>
 
 ```bash
 "THM{2673a7dd116de68e85c48ec0b1f2612e}"

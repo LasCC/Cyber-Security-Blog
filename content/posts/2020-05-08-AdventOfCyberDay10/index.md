@@ -15,7 +15,9 @@ What? You didn't think us elves got presents too? Well we do and we get first pi
 
 Can you help me hack into Santa's system that keeps track of the naughty and nice people to see if I am on it?
 
-![https://i.imgur.com/ODZrb5R.png](https://i.imgur.com/ODZrb5R.png)
+<div className="Image__Medium">
+  <img src="https://i.imgur.com/ODZrb5R.png" alt="blog_image" />
+</div>
 
 Check out the [blog post](https://blog.tryhackme.com/metasploit/) shown above to help you on this task.
 
@@ -23,7 +25,9 @@ Check out the [blog post](https://blog.tryhackme.com/metasploit/) shown above 
 
 On the title of this box it says "Struts", so I search if there is some exploits in the metasploit framework and spoiler alert there is one.
 
-![https://i.imgur.com/6PI0zyZ.png](https://i.imgur.com/6PI0zyZ.png)
+<div className="Image__Medium">
+  <img src="https://i.imgur.com/6PI0zyZ.png" alt="blog_image" />
+</div>
 
 Now that we have the exploit let's use it !
 
@@ -71,7 +75,9 @@ meterpreter > cat /usr/local/tomcat/webapps/ROOT/ThisIsFlag1.txt
 THM{3ad96bb13ec963a5ca4cb99302b37e12}
 ```
 
-![https://i.imgur.com/CC7mRJq.png](https://i.imgur.com/CC7mRJq.png)
+<div className="Image__Medium">
+  <img src="https://i.imgur.com/CC7mRJq.png" alt="blog_image" />
+</div>
 
 ```bash
 THM{3ad96bb13ec963a5ca4cb99302b37e12} # flag

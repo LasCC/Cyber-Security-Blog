@@ -6,6 +6,8 @@ hero: ./images/hero.png
 excerpt: "Advent of Cyber Challenge all the challengs solved write up"
 ---
 
+Hello there, this is my writeup for the challenge "Advent Of Cyber" by TryHackMe if there is something not clear or wrong don't hesitate to contact me at coulonludovicc[at]gmail[dot]com
+
 [TryHackMe | Day 4 Training](/advent-of-cyber-day-4-training)
 
 [TryHackMe | Day 5 Ho-Ho-Hosint](/advent-of-cyber-day-5-ho-ho-hosint)
@@ -37,9 +39,3 @@ excerpt: "Advent of Cyber Challenge all the challengs solved write up"
 [TryHackMe | Day 18 ELF JS](/advent-of-cyber-day-18-elf-js)
 
 [TryHackMe | Day 19 Commands](/advent-of-cyber-day-19-commands)
-
-[TryHackMe | Day 20 Unknown Storage](/advent-of-cyber-day-14-unknown-storage)
-
-[TryHackMe | Day 21 Unknown Storage](/advent-of-cyber-day-14-unknown-storage)
-
-[TryHackMe | Day 22 Unknown Storage](/advent-of-cyber-day-14-unknown-storage)

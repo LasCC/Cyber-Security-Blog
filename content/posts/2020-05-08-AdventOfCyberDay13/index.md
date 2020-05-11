@@ -48,7 +48,9 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 **/retro (Status: 301)**
 ```
 
-![https://i.imgur.com/TnYgs1a.png](https://i.imgur.com/TnYgs1a.png)
+<div className="Image__Medium">
+  <img src="https://i.imgur.com/TnYgs1a.png" alt="blog_image" />
+</div>
 
 [http://10.10.98.16/retro/index.php/2019/12/09/ready-player-one/](http://10.10.98.16/retro/index.php/2019/12/09/ready-player-one/)
 
@@ -134,9 +136,13 @@ sudo apt-get install -y remmina
 
 ### #2 Gain initial access and read the contents of user.txt
 
-![https://i.imgur.com/bOh3bTq.png](https://i.imgur.com/bOh3bTq.png)
+<div className="Image__Medium">
+  <img src="https://i.imgur.com/bOh3bTq.png" alt="blog_image" />
+</div>
 
-![https://imgur.com/aZijGff.png](https://imgur.com/aZijGff.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/aZijGff.png" alt="blog_image" />
+</div>
 
 ```bash
 3b99fbdc6d430bfb51c72c651a261927
@@ -144,7 +150,9 @@ sudo apt-get install -y remmina
 
 ### #3 [Optional] Elevate privileges and read the content of root.txt
 
-![https://imgur.com/nFCPL8x.png](https://imgur.com/nFCPL8x.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/nFCPL8x.png" alt="blog_image" />
+</div>
 
 As you can see, there is a bookmark on the google chrome session, let's try it !
 
@@ -152,19 +160,29 @@ As you can see, there is a bookmark on the google chrome session, let's try it !
 
 [https://www.youtube.com/watch?v=3BQKpPNlTSo](https://www.youtube.com/watch?v=3BQKpPNlTSo)
 
-![https://imgur.com/uuJaz67.png](https://imgur.com/uuJaz67.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/uuJaz67.png" alt="blog_image" />
+</div>
 
-![https://imgur.com/HnLtmbZ.png](https://imgur.com/HnLtmbZ.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/HnLtmbZ.png" alt="blog_image" />
+</div>
 
 ```bash
 C:\Windows\System32\*.*
 ```
 
-![https://imgur.com/vmDZgOv.png](https://imgur.com/vmDZgOv.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/vmDZgOv.png" alt="blog_image" />
+</div>
 
-![https://imgur.com/RPs7HQW.png](https://imgur.com/RPs7HQW.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/RPs7HQW.png" alt="blog_image" />
+</div>
 
-![https://i.imgur.com/7vRL2nJ.png](https://i.imgur.com/7vRL2nJ.png)
+<div className="Image__Medium">
+  <img src="https://i.imgur.com/7vRL2nJ.png" alt="blog_image" />
+</div>
 
 ```bash
 7958b569565d7bd88d10c6f22d1c4063 # root flag

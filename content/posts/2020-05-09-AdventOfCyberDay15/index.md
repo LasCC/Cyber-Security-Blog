@@ -41,7 +41,9 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 ### #1 What is Charlie going to book a holiday to?
 
-![https://imgur.com/chYu9Xf.png](https://imgur.com/chYu9Xf.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/chYu9Xf.png" alt="blog_image" />
+</div>
 
 ```bash
 Hawaii
@@ -68,9 +70,13 @@ If we check the source code of the webpage
 
 Now let's fire up burp suite and make some LFI :D
 
-![https://imgur.com/iv4ifNY.png](https://imgur.com/iv4ifNY.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/iv4ifNY.png" alt="blog_image" />
+</div>
 
-![https://imgur.com/Ah1MO52.png](https://imgur.com/Ah1MO52.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/Ah1MO52.png" alt="blog_image" />
+</div>
 
 Now that we have charlie's password hash let's crack it !
 

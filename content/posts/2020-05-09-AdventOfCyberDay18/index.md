@@ -28,7 +28,9 @@ P.S. If you want to learn more about XSS, we have a [room](https://tryhackme.com
 
 First let's try all the form post to see if there is an XSS attack
 
-![https://imgur.com/QYpc4e3.png](https://imgur.com/QYpc4e3.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/QYpc4e3.png" alt="blog_image" />
+</div>
 
 As you can see the website is vulnerable to stored XSS
 

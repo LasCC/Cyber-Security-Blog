@@ -54,4 +54,6 @@ Copy the image url of the woman's portait and search it with google image(search
 **Ada Lovelace**
 ```
 
-![https://i.imgur.com/a2jjXmH.png](https://i.imgur.com/a2jjXmH.png)
+<div className="Image__Medium">
+  <img src="https://i.imgur.com/a2jjXmH.png" alt="blog_image" />
+</div>

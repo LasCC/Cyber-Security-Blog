@@ -72,7 +72,7 @@ kali@kali:~$ curl http://10.10.157.219/fsocity.dic > password.txt
   <img src="https://imgur.com/kSyfQPC.png" alt="blog_image" />
 </div>
 
-<div className="Image__Medium">
+<div className="Image__Small">
   <img src="https://imgur.com/ip9jZ1e.png" alt="blog_image" />
 </div>
 
