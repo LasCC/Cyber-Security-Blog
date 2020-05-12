@@ -10,7 +10,9 @@ excerpt: "RP: PS Empire - TryHackMe writeup"
 
 [TryHackMe | RP: PS Empire](https://tryhackme.com/room/rppsempire)
 
-![https://i.imgur.com/0xn4lAt.jpg](https://i.imgur.com/0xn4lAt.jpg)
+<div className="Image__Medium">
+  <img src="https://i.imgur.com/0xn4lAt.jpg" alt="blog_image" />
+</div>
 
 PowerShell Empire is a powerful post-exploitation framework which allows us to perform various functions such as privesc, password gathering, situational awareness, and many more!
 

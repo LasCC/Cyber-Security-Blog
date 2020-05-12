@@ -78,9 +78,13 @@ ssh
 kali@kali:~$ gobuster dir -u 10.10.229.200 -w /usr/share/wordlists/rockyou.txt
 ```
 
-![https://imgur.com/1MbQj3P.png](https://imgur.com/1MbQj3P.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/1MbQj3P.png" alt="blog_image" />
+</div>
 
-![https://imgur.com/hRVpvg2.png](https://imgur.com/hRVpvg2.png)
+<div className="Image__Medium">
+  <img src="https://imgur.com/hRVpvg2.png" alt="blog_image" />
+</div>
 
 ```bash
 Disallow: /openemr-5_0_1_3
@@ -309,7 +313,7 @@ ssh # open ssh port 2222
 
 ```bash
 kali@kali:~$ ssh mitch@10.10.229.200 -p 2222
-mitch@10.10.229.200's password:
+mitch@10.10.229.200 password:
 Welcome to Ubuntu 16.04.6 LTS (GNU/Linux 4.15.0-58-generic i686)
 
  * Documentation:  https://help.ubuntu.com

