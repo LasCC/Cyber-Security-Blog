@@ -114,7 +114,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 
 ### #4 Navigate to our discovered hidden directory, what potential username do we discover?
 
-<div className="Image__Medium">
+<div className="Image__Small">
   <img src="https://imgur.com/2r9msWq.png" alt="blog_image" />
 </div>
 
@@ -156,7 +156,7 @@ THM{HACK_PLAYER_ONE}
   <img src="https://i.imgur.com/V9vvTIY.jpg" alt="blog_image" />
 </div>
 
-<div className="Image__Medium">
+<div className="Image__Small">
   <img src="https://imgur.com/E8LViJj.png" alt="blog_image" />
 </div>
 
