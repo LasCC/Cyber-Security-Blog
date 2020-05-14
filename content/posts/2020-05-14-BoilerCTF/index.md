@@ -45,7 +45,7 @@ Intermediate level CTF. Just enumerate, you'll get there.
 |_http-favicon: Unknown favicon MD5: D421EB02E012E5C8728CC7208325C966
 | http-methods:
 |_  Supported Methods: GET HEAD POST OPTIONS
-|_http-title: Site doesn't have a title (text/html; Charset=iso-8859-1).
+|_http-title: Site doesnt have a title (text/html; Charset=iso-8859-1).
 Service Info: OS: Unix
 ```
 
@@ -115,7 +115,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 2020/05/13 20:10:05 Starting gobuster
 ===============================================================
 /manual (Status: 301)
-/**joomla** (Status: 301)
+"/joomla" (Status: 301)
 Progress: 10483 / 220561 (4.75%)^C
 [!] Keyboard interrupt detected, terminating.
 ===============================================================
