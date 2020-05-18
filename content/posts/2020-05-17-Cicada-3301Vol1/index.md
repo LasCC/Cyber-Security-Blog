@@ -1,12 +1,12 @@
 ---
-title: "Cicada-3301 Vol:1 - TryHackMe"
+title: "Cicada-3301 Vol-1 - TryHackMe"
 author: Ludovic COULON
 date: 2020-05-17
 hero: ./images/hero.jpeg
-excerpt: "Writeup for the Cicada-3301 Vol:1 room on TryHackMe"
+excerpt: "Writeup for the Cicada-3301 Vol-1 room on TryHackMe"
 ---
 
-[TryHackMe | Cicada-3301 Vol:1](https://tryhackme.com/room/cicada3301vol1)
+[TryHackMe | Cicada-3301 Vol-1](https://tryhackme.com/room/cicada3301vol1)
 
 Web Browsers are useless here
 
