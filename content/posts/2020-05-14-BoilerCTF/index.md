@@ -6,7 +6,7 @@ hero: ./images/hero.jpeg
 excerpt: "Writeup for the Boiler CTF challenge on TryHackMe"
 ---
 
-[TryHackMe | Retro](https://tryhackme.com/room/retro)
+[TryHackMe | Boiler CTF](https://tryhackme.com/room/boilerctf2)
 
 Intermediate level CTF. Just enumerate, you'll get there.
 
