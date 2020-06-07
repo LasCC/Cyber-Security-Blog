@@ -15,7 +15,7 @@ A CTF challenge set by csaw. During this task, you will be have to inspect a pca
 ### #1 Download and look through the pcap file to analyse the traffic in order to find the flag.
 
 <div className="Image__Medium">
-  <img src="https://imgur.com/G0W0wNx.png" alt="blog_image" />>
+  <img src="https://imgur.com/G0W0wNx.png" alt="blog_image" />
 </div>
 
 ```python
