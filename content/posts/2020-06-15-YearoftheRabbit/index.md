@@ -8,7 +8,7 @@ excerpt: "Writeup for the Year of the Rabbit CTF room on TryHackMe"
 
 [TryHackMe | Year of the Rabbit CTF](https://tryhackme.com/room/yearoftherabbit)
 
-<div className="Image__Medium">
+<div className="Image__Small">
   <img src="https://imgur.com/LmK6uGc.png" alt="blog_image" />
 </div>
 
@@ -82,7 +82,7 @@ Well let's turn off javascript
 
 As the message says you need to listen to the music
 
-Approximately at 1min in the video you can ear
+Approximately at 1min in the video you can hear
 
 > I'll put you out of your misery you're looking in the wrong place
 
@@ -191,7 +191,7 @@ User gwendoline may run the following commands on year-of-the-rabbit:
 </div>
 
 ```bash
-#Type the follwing commands in vi
+#Type the following commands in vi
 vi
 :set shell=/bin/sh
 :shell
