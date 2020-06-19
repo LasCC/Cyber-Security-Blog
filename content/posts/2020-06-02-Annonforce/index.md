@@ -300,3 +300,9 @@ root.txt
 root@ubuntu:~ cat root.txt
 f706456440c7af4187810c31c6cebdce
 ```
+
+<center>
+  <a href="https://tryhackme.com/p/boperXD" target="_blank">
+    <img src="https://i.imgur.com/GAKz5CS.png" alt="TryhackMeProfile" />
+  </a>
+</center>

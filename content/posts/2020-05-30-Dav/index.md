@@ -120,3 +120,9 @@ cat: /root/: Is a directory
 $ sudo cat /root/root.txt
 101101ddc16b0cdf65ba0b8a7af7afa5
 ```
+
+<center>
+  <a href="https://tryhackme.com/p/boperXD" target="_blank">
+    <img src="https://i.imgur.com/GAKz5CS.png" alt="TryhackMeProfile" />
+  </a>
+</center>

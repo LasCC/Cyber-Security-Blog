@@ -111,3 +111,9 @@ drwxr-xr-x 78 root     root       4096 May 28 16:18 .
 dr-xr-xr-x 25 root     root       4096 May 28 16:18 ..
 -rwxrwxr-x  1 new-user new-user  13545 Oct 23  2019 8V2L
 ```
+
+<center>
+  <a href="https://tryhackme.com/p/boperXD" target="_blank">
+    <img src="https://i.imgur.com/GAKz5CS.png" alt="TryhackMeProfile" />
+  </a>
+</center>

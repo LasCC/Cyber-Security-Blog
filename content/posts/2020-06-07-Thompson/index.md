@@ -122,3 +122,9 @@ id.sh  root.txt  test.txt  user.txt
 $ cat root.txt
 d89d5391984c0450a95497153ae7ca3a
 ```
+
+<center>
+  <a href="https://tryhackme.com/p/boperXD" target="_blank">
+    <img src="https://i.imgur.com/GAKz5CS.png" alt="TryhackMeProfile" />
+  </a>
+</center>

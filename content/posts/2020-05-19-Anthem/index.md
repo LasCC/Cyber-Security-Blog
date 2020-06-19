@@ -321,3 +321,9 @@ ChangeMeBaby1MoreTime
 ```bash
 THM{Y0U_4R3_1337}
 ```
+
+<center>
+  <a href="https://tryhackme.com/p/boperXD" target="_blank">
+    <img src="https://i.imgur.com/GAKz5CS.png" alt="TryhackMeProfile" />
+  </a>
+</center>

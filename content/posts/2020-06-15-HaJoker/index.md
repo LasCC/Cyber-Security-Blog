@@ -293,3 +293,9 @@ $ lxc exec ignite /bin/sh
 ```
 final.txt
 ```
+
+<center>
+  <a href="https://tryhackme.com/p/boperXD" target="_blank">
+    <img src="https://i.imgur.com/GAKz5CS.png" alt="TryhackMeProfile" />
+  </a>
+</center>

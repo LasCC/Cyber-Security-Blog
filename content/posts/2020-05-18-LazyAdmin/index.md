@@ -302,3 +302,9 @@ root.txt
 $ cat root.txt
 THM{6637f41d0177b6f37cb20d775124699f}
 ```
+
+<center>
+  <a href="https://tryhackme.com/p/boperXD" target="_blank">
+    <img src="https://i.imgur.com/GAKz5CS.png" alt="TryhackMeProfile" />
+  </a>
+</center>

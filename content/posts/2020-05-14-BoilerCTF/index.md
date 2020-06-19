@@ -294,3 +294,9 @@ stoner@Vulnerable:~$ find . -exec cat /root/root.txt \; -quit
 It wasn't that hard, was it?
 stoner@Vulnerable:~$
 ```
+
+<center>
+  <a href="https://tryhackme.com/p/boperXD" target="_blank">
+    <img src="https://i.imgur.com/GAKz5CS.png" alt="TryhackMeProfile" />
+  </a>
+</center>
