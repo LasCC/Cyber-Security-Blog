@@ -14,8 +14,8 @@ excerpt: "Writeup for the CTF collection Vol.2 challenge"
 
 Welcome, welcome and welcome to another CTF collection. This is the second installment of the CTF collection series. For your information, the second serious focuses on the web-based challenge. There are a total of 20 easter eggs a.k.a flags can be found within the box. Let see how good is your CTF skill.
 
-Warning: **The challenge contains seizure images and background. If you feeling
-uncomfortable, try removing the background on <style> tag.**
+Warning: The challenge contains seizure images and background. If you feeling
+uncomfortable, try removing the background on style tag.
 
 Note: All the challenges flag are formatted as `THM{flag}`, unless stated otherwise
 
