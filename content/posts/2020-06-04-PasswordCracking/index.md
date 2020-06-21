@@ -121,6 +121,6 @@ WinP@$$w0rd3Z
 
 <center>
   <a href="https://tryhackme.com/p/boperXD" target="_blank">
-    <img src="https://i.imgur.com/GAKz5CS.png" alt="TryhackMeProfile" />
+    <img src="https://i.imgur.com/tpmhPhO.png" alt="TryhackMeProfile" />
   </a>
 </center>

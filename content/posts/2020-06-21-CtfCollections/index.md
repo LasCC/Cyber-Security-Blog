@@ -8,7 +8,7 @@ excerpt: "Writeup for the CTF collection Vol.2 challenge"
 
 [TryHackMe | CTF collection Vol.2](https://tryhackme.com/room/ctfcollectionvol2)
 
-<div className="Image__Medium">
+<div className="Image__Small">
   <img src="https://i.ibb.co/d6BKFcJ/holida-1.png" alt="blog_image" />
 </div>
 
@@ -237,13 +237,13 @@ THM{w3lc0m3!_4nd_w3lc0m3}
 
 ### #8 Easter 8
 
-<div className="Image__Medium">
+<div className="Image__Small">
   <img src="https://imgur.com/PxfIfO3.png" alt="blog_image" />
 </div>
 
 Well, we need to change our user agent to see the hidden flag let's do that 😞
 
-<div className="Image__Medium">
+<div className="Image__Small">
   <img src="https://imgur.com/igrKz73.png" alt="blog_image" />
 </div>
 
@@ -347,13 +347,13 @@ THM{d1r3c7_3mb3d}
   <img src="https://imgur.com/1aI0UDc.png" alt="blog_image" />
 </div>
 
-<div className="Image__Medium">
+<div className="Image__Small">
   <img src="https://imgur.com/cElw6aY.png" alt="blog_image" />
 </div>
 
 Convert all the hex values to ASCII and type it in the input
 
-```bash
+```text
 Didn't find it :(
 ```
 
@@ -385,11 +385,11 @@ THM{73mp3r_7h3_h7ml}
   <img src="https://imgur.com/Nfndkdf.png" alt="blog_image" />
 </div>
 
-<div className="Image__Medium">
+<div className="Image__Small">
   <img src="https://imgur.com/Z20MjIL.png" alt="blog_image" />
 </div>
 
-<div className="Image__Medium">
+<div className="Image__Small">
   <img src="https://imgur.com/ZrocFqZ.png" alt="blog_image" />
 </div>
 
@@ -441,6 +441,6 @@ Easter 20: THM{17_w45_m3_4ll_4l0n6}
 
 <center>
   <a href="https://tryhackme.com/p/boperXD" target="_blank">
-    <img src="https://i.imgur.com/GAKz5CS.png" alt="TryhackMeProfile" />
+    <img src="https://i.imgur.com/tpmhPhO.png" alt="TryhackMeProfile" />
   </a>
 </center>
