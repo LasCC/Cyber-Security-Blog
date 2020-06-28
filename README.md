@@ -1,4 +1,9 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a84f2de8-be96-4152-bf41-18447b7cfa30/deploy-status)]()
+<div align="center">
+  <a href="https://tryhackme.com/p/boperXD" target="_blank">
+    <img src="https://i.imgur.com/SifFdHE.png" alt="TryHackMe">
+  </a>
+</div>
+
 
 [![N|Solid](https://i.imgur.com/jMXP8TZ.png)](https://i.imgur.com/jMXP8TZ.png)
 [![N|Solid](https://i.imgur.com/wbDp2cK.png)](https://i.imgur.com/wbDp2cK.png)
