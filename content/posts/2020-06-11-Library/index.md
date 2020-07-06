@@ -165,6 +165,6 @@ e8c8c6c256c35515d1d344ee0488c617
 
 <center>
   <a href="https://tryhackme.com/p/boperXD" target="_blank">
-    <img src="https://i.imgur.com/tpmhPhO.png" alt="TryhackMeProfile" />
+    <img src="https://i.imgur.com/8vldBpt.png" alt="TryhackMeProfile" />
   </a>
 </center>
