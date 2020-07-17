@@ -1,9 +1,7 @@
 import prism from "./prism";
-import novelaTheme from "@narative/gatsby-theme-novela/src/gatsby-plugin-theme-ui";
 
 export default {
   prism,
-
   primary: "#000",
   secondary: "#73737D",
   grey: "#73737D",
