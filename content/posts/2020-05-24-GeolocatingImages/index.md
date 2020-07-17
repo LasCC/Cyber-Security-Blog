@@ -82,6 +82,6 @@ Abbey Road
 
 <center>
   <a href="https://tryhackme.com/p/boperXD" target="_blank">
-    <img src="https://i.imgur.com/8vldBpt.png" alt="TryhackMeProfile" />
+    <img src="https://i.imgur.com/hejzVWP.png" alt="TryhackMeProfile" />
   </a>
 </center>

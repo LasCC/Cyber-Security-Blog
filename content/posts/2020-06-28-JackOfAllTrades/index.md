@@ -203,6 +203,6 @@ securi-tay2020_{6f125d32f38fb8ff9e720d2dbce2210a}
 
 <center>
   <a href="https://tryhackme.com/p/boperXD" target="_blank">
-    <img src="https://i.imgur.com/8vldBpt.png" alt="TryhackMeProfile" />
+    <img src="https://i.imgur.com/hejzVWP.png" alt="TryhackMeProfile" />
   </a>
 </center>

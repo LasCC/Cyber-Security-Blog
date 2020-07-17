@@ -1,9 +1,8 @@
 <div align="center">
   <a href="https://tryhackme.com/p/boperXD" target="_blank">
-    <img src="https://i.imgur.com/SifFdHE.png" alt="TryHackMe">
+    <img src="https://i.imgur.com/hejzVWP.png" alt="TryHackMe">
   </a>
 </div>
-
 
 [![N|Solid](https://i.imgur.com/jMXP8TZ.png)](https://i.imgur.com/jMXP8TZ.png)
 [![N|Solid](https://i.imgur.com/wbDp2cK.png)](https://i.imgur.com/wbDp2cK.png)
