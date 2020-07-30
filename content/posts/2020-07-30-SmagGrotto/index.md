@@ -38,7 +38,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 
 <div className="Image__Medium">
-  <img src="https://i.imgur.com/D9PypUN.png" alt="blog_image" />>
+  <img src="https://i.imgur.com/D9PypUN.png" alt="blog_image" />
 </div>
 
 Let's see if there is something on the website

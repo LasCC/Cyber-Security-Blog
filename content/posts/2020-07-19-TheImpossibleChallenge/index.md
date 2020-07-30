@@ -3,7 +3,7 @@ title: "The Impossible Challenge - TryHackMe"
 author: Ludovic COULON
 date: 2020-07-19
 hero: ./images/hero.png
-excerpt: "Writeup for the The Impossible Challenge university of Portsmouth's beginner room"
+excerpt: "Writeup for the The Impossible Challenge room"
 ---
 
 [TryHackMe | The Impossible Challenge](https://tryhackme.com/room/theimpossiblechallenge)
