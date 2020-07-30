@@ -47,3 +47,9 @@ Password to decode the archive : hahaezpz
 ```
 THM{Zero_Width_Characters_EZPZ}
 ```
+
+<center>
+  <a href="https://tryhackme.com/p/boperXD" target="_blank">
+    <img src="https://i.imgur.com/hejzVWP.png" alt="TryhackMeProfile" />
+  </a>
+</center>
