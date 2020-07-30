@@ -1,7 +1,7 @@
 ---
 title: "Smag Grotto - TryHackMe"
 author: Ludovic COULON
-date: 2020-07-19
+date: 2020-07-30
 hero: ./images/hero.jpeg
 excerpt: "Writeup for the Smag Grotto university of Portsmouth's beginner room"
 ---
@@ -73,7 +73,7 @@ The simple way to extract the data is to select the first packet then go to the 
 
 ![https://i.imgur.com/yKY9pMB.png](https://i.imgur.com/yKY9pMB.png)
 
-![https://i.imgur.com/uI8Nksb.png](https://i.imgur.com/uI8Nksb.png)
+![https://i.imgur.com/RR1fGLX.png](https://i.imgur.com/RR1fGLX.png)
 
 Nice we successfully have the username and the password but for what ? The SSH ? Or something else ? 🙄
 
@@ -88,7 +88,7 @@ To add this host you need to edit your "/etc/hosts" file.
 Well let's use the credentials that the TCP Stream gives us
 
 ```bash
-helpdesk:cH4nG3M3_n0w
+h[nope 👁👄👁]k:cH[nope 👁👄👁]0w
 ```
 
 ![https://i.imgur.com/L0iBMqp.png](https://i.imgur.com/L0iBMqp.png)
@@ -146,10 +146,10 @@ And voilà ! You have the access to the remote server ! 🎉
 ### **#1 What is the user flag?**
 
 ```bash
-iusGorV7EbmxM5AuIe2w499msaSuqU3j
+iusGo[nope 👁👄👁]uqU3j
 ```
 
-![https://i.imgur.com/WCAha3D.png](https://i.imgur.com/WCAha3D.png)
+![https://i.imgur.com/5xn3kch.png](https://i.imgur.com/5xn3kch.png)
 
 ### **#2 What is the root flag?**
 
@@ -161,10 +161,10 @@ Now let's get a root access 😍
 
 [apt get | GTFOBins](https://gtfobins.github.io/gtfobins/apt-get/#sudo)
 
-![https://i.imgur.com/Vm5kVEu.png](https://i.imgur.com/Vm5kVEu.png)
+![https://i.imgur.com/iDrkgGN.png](https://i.imgur.com/iDrkgGN.png)
 
 ```bash
-uJr6zRgetaniyHVRqqL58uRasybBKz2T
+uJr6zRgetan[nope 👁👄👁]bBKz2T
 ```
 
 <center>
