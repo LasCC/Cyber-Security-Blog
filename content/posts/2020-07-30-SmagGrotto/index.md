@@ -50,7 +50,8 @@ Let's see if there is something on the website
 Well nothing of the website let's see of there is some hidden dirrectory with gobuster/dirb
 
 ```bash
-[smaggrotto] gobuster -u 10.10.192.6 -w /opt/directory-list-2.3-medium.txt                                               2:10:03 # Select your own wordlist                                              2:06:46
+# Select your own wordlist
+[smaggrotto] gobuster -u 10.10.192.6 -w /opt/directory-list-2.3-medium.txt
 ```
 
 ```bash
@@ -154,7 +155,7 @@ As you can see the cronjob is taking the jake's backup SSH public key and add it
 First let's generate our own SSH public key 👍
 
 ```bash
-[smaggrotto] ssh-keygen -o                                                                                               2:25:52
+[smaggrotto] ssh-keygen -o
 ```
 
 <div className="Image__Medium">
@@ -170,7 +171,7 @@ Nice we have our own SSH public key let's change the backup file on the server �
 Now let's wait one or two minutes and then we can log to the server with the jake username 😀
 
 ```bash
-[smaggrotto] ssh -i [Path to your ssh key] jake@10.10.192.6                                                            2:28:49
+[smaggrotto] ssh -i [Path to your ssh key] jake@10.10.192.6
 ```
 
 <div className="Image__Medium">
@@ -213,6 +214,6 @@ uJr6zRgetan[nope 👁👄👁]bBKz2T
 
 <center>
   <a href="https://tryhackme.com/p/boperXD" target="_blank">
-    <img src="https://i.imgur.com/hejzVWP.png" alt="TryhackMeProfile" />
+    <img src="https://i.imgur.com/kUD3W5P.png" alt="TryhackMeProfile" />
   </a>
 </center>

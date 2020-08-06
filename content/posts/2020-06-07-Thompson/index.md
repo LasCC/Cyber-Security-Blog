@@ -125,6 +125,6 @@ d89d5391984c0450a95497153ae7ca3a
 
 <center>
   <a href="https://tryhackme.com/p/boperXD" target="_blank">
-    <img src="https://i.imgur.com/hejzVWP.png" alt="TryhackMeProfile" />
+    <img src="https://i.imgur.com/kUD3W5P.png" alt="TryhackMeProfile" />
   </a>
 </center>
