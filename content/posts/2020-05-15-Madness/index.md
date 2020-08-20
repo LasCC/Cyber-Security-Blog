@@ -234,6 +234,6 @@ THM{5ecd98aa66a6abb670184d7547c8124a}
 
 <center>
   <a href="https://tryhackme.com/p/boperXD" target="_blank">
-    <img src="https://i.imgur.com/kUD3W5P.png" alt="TryhackMeProfile" />
+    <img src="https://i.imgur.com/p0h00A1.png" alt="TryhackMeProfile" />
   </a>
 </center>
