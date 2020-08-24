@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://tryhackme.com/p/boperXD" target="_blank">
-    <img src="https://i.imgur.com/p0h00A1.png" alt="TryHackMe">
+    <img src="https://tryhackme-badges.s3.amazonaws.com/boperXD.png" alt="TryHackMe">
   </a>
 </div>
 

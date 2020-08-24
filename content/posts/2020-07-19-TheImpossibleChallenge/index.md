@@ -14,11 +14,15 @@ qo qt q`r6 ro su pn s_ rn r6 p6 s_ q2 ps qq rs rp ps rt r4 pu pt qn r4 rq pt q` 
 
 Let's download the file to see if there is some kind of help ?
 
-![https://i.imgur.com/yjvNp4i.png](https://i.imgur.com/yjvNp4i.png)
+<div className="Image__Medium">
+  <img src="https://i.imgur.com/yjvNp4i.png" alt="blog_image" />
+</div>
 
 Err, we need a password let's see if we can decode the hidden message that the creator of the room tell us.
 
-![https://i.imgur.com/ap2H90U.png](https://i.imgur.com/ap2H90U.png)
+<div className="Image__Medium">
+  <img src="https://i.imgur.com/ap2H90U.png" alt="blog_image" />
+</div>
 
 ```
 ROT13 > ROT47 > HEX > Base64
@@ -28,7 +32,9 @@ It's inside the text, in front of your eyes!
 
 Hmm well, there is something hidden in front of my eyes 👀 Let's find it !
 
-![https://i.imgur.com/GjqBC5j.png](https://i.imgur.com/GjqBC5j.png)
+<div className="Image__Medium">
+  <img src="https://i.imgur.com/GjqBC5j.png" alt="blog_image" />
+</div>
 
 When you hover the description message on the room you can see there is something odd, let's see if we can decode it !
 
@@ -36,13 +42,17 @@ This is unicode steganography with Zero-With Characters
 
 [Unicode Steganography with Zero-Width Characters](https://330k.github.io/misc_tools/unicode_steganography.html)
 
-![https://i.imgur.com/aXK0yTK.png](https://i.imgur.com/aXK0yTK.png)
+<div className="Image__Medium">
+  <img src="https://i.imgur.com/aXK0yTK.png" alt="blog_image" />
+</div>
 
 ```
 Password to decode the archive : hahaezpz
 ```
 
-![https://i.imgur.com/8PEL4sW.png](https://i.imgur.com/8PEL4sW.png)
+<div className="Image__Medium">
+  <img src="https://i.imgur.com/8PEL4sW.png" alt="blog_image" />
+</div>
 
 ```
 THM{Zero_Width_Characters_EZPZ}
@@ -50,6 +60,6 @@ THM{Zero_Width_Characters_EZPZ}
 
 <center>
   <a href="https://tryhackme.com/p/boperXD" target="_blank">
-    <img src="https://i.imgur.com/p0h00A1.png" alt="TryhackMeProfile" />
+    <img src="https://tryhackme-badges.s3.amazonaws.com/boperXD.png" alt="TryhackMeProfile" />
   </a>
 </center>
