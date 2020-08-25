@@ -8,7 +8,7 @@ module.exports = {
       heading: `A place to drop off things that I find interesting and that others might enjoy...`,
       maxWidth: 680,
     },
-    image: `websiteImage.png`,
+    image: `content/websiteImage.png`,
     social: [
       {
         name: `github`,
