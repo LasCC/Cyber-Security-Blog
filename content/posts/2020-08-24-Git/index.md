@@ -1,7 +1,7 @@
 ---
 title: "Git Happens - TryHackMe"
 author: Ludovic COULON
-date: 2020-08-24
+date: 2020-08-21
 hero: ./images/hero.png
 excerpt: "Writeup for the Git Happens room"
 ---
