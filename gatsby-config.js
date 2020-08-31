@@ -37,6 +37,14 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-verify-brave",
+      options: {
+        token:
+          "d5bd0fbef027ade39c51dd77d03c7de00b47ca8323ed185412edc1d0dc716dfa",
+        domain: "ludovic-cyber-sec.netlify.app",
+      },
+    },
+    {
       resolve: "@narative/gatsby-theme-novela",
       options: {
         contentPosts: "content/posts",

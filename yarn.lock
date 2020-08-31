@@ -8209,6 +8209,13 @@ gatsby-plugin-typescript@^2.1.2, gatsby-plugin-typescript@^2.4.6:
     "@babel/runtime" "^7.10.2"
     babel-plugin-remove-graphql-queries "^2.9.5"
 
+gatsby-plugin-verify-brave@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-verify-brave/-/gatsby-plugin-verify-brave-1.0.5.tgz#b9586a14a061d4669d6acf30744a222896029df8"
+  integrity sha512-2j1O2sMYDNeZFvx4tnHZjre5EVgqjsQFanUz0UUp5/GT2LU9M59exminlOiq/vS4fSVWXeQ3g7tZWcVbSBxlIQ==
+  dependencies:
+    common-tags "^1.8.0"
+
 gatsby-react-router-scroll@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-3.0.3.tgz#3c373fe96efe63259235bb5f5f79eca837ab19d1"
