@@ -17,7 +17,7 @@
     "gatsby-plugin-netlify-cms": "^4.1.40",
     "gatsby-plugin-verify-brave": "^1.0.5",
     "gh-pages": "^2.2.0",
-    "netlify-cms-app": "^2.12.14",
+    "netlify-cms-app": "^2.12.24",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   }
