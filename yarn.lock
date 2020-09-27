@@ -1800,9 +1800,9 @@
     glob-to-regexp "^0.3.0"
 
 "@narative/gatsby-theme-novela@^0.*":
-  version "0.16.0"
-  resolved "https://registry.yarnpkg.com/@narative/gatsby-theme-novela/-/gatsby-theme-novela-0.16.0.tgz#bf18db5bf902417fc6f4cffe892404238dad7981"
-  integrity sha512-iudbTKh+/3SuRHlAVlEua3SdmW7zLBfcvumZMiHyWlzL90fPaF7bl9PDGcrHsAeTx1n3CeslH5a/wMUTWQtMbg==
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/@narative/gatsby-theme-novela/-/gatsby-theme-novela-0.18.0.tgz#b8d138ffc022cec9c123154a997d81d4eebe2f9f"
+  integrity sha512-+1JgFFoGMspDbQgS/IhFfTCgVWuSakTskM6eHFbtBhCSzmuotnsFKulGT9WWJKxoTo/HnuyfjzhwhHQwD3ZAVA==
   dependencies:
     "@blocks/kit" "^0.0.28"
     "@emotion/core" "^10.0.14"
