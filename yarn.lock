@@ -8623,20 +8623,20 @@ gatsby-plugin-mdx@^1.0.32:
     unist-util-remove "^1.0.3"
     unist-util-visit "^1.4.1"
 
-gatsby-plugin-netlify-cms@^4.1.40:
-  version "4.3.5"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify-cms/-/gatsby-plugin-netlify-cms-4.3.5.tgz#36d6c3c59016484c8dd39dd4e31fa10e36b8e52f"
-  integrity sha512-RS5Yw3tb/oAJSdnXS6JzWyU7XLb+f8pPesW5HKVTFEbKMWcz3qL+5+5haZNYIpQcbbP6EihsVt2zWQ5aZuY7kQ==
+gatsby-plugin-netlify-cms@^4.3.14:
+  version "4.3.14"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify-cms/-/gatsby-plugin-netlify-cms-4.3.14.tgz#807be0f9136ef5cdf8bfaa0dd4ba877f92c5c086"
+  integrity sha512-tbY0Vvb/Ei7Qfgblm2hzIjYwQxQiZTuDpk2AkTbTTodagoghdS1c6l8VET6tN+V2FZrOfszPeCkU0MEYx+HZKQ==
   dependencies:
     "@pieh/friendly-errors-webpack-plugin" "1.7.0-chalk-2"
     copy-webpack-plugin "^5.1.1"
     html-webpack-exclude-assets-plugin "^0.0.7"
     html-webpack-plugin "^3.2.0"
     html-webpack-tags-plugin "^2.0.17"
-    lodash "^4.17.15"
+    lodash "^4.17.20"
     mini-css-extract-plugin "^0.8.2"
     netlify-identity-widget "^1.6.0"
-    webpack "^4.43.0"
+    webpack "^4.44.1"
 
 gatsby-plugin-page-creator@^2.3.28:
   version "2.3.28"
@@ -19779,7 +19779,7 @@ webpack-virtual-modules@^0.2.2:
   dependencies:
     debug "^3.0.0"
 
-webpack@^4.43.0, webpack@^4.44.1:
+webpack@^4.44.1:
   version "4.44.2"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.44.2.tgz#6bfe2b0af055c8b2d1e90ed2cd9363f841266b72"
   integrity sha512-6KJVGlCxYdISyurpQ0IPTklv+DULv05rs2hseIXer6D7KrUicRDLFb4IUM1S6LUAKypPM/nSiVSuv8jHu1m3/Q==
