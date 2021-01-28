@@ -162,3 +162,9 @@ https://edu.heibai.org/XSS-Cheat-Sheet-2019-Edition-2.pdf
 <div className="Image__Small">
 	<img src="https://i.imgur.com/4fmxxQ7.png" alt="blog_image"/>
 </div>
+
+<center>
+  <a href="https://tryhackme.com/p/boperXD" target="_blank">
+    <img src="https://tryhackme-badges.s3.amazonaws.com/boperXD.png" alt="TryhackMeProfile" />
+  </a>
+</center>
