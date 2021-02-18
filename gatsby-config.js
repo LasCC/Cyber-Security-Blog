@@ -2,7 +2,7 @@ module.exports = {
 	siteMetadata: {
 		title: `Ludovic COULON - Cyber Security Blog`,
 		name: `Ludovic COULON`,
-		siteUrl: `https://ludovic-cyber-sec.web.app`,
+		siteUrl: `https://ludovic-cyber-sec.netlify.app`,
 		description: `Blog that gathers different articles about computer security and writup of challenges I've done..`,
 		hero: {
 			heading: `A place to drop off things that I find interesting and that others might enjoy...`,
