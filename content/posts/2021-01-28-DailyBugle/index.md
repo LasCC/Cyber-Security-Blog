@@ -10,7 +10,7 @@ excerpt: "Compromise a Joomla CMS account via SQLi, practise cracking hashes and
 
 ![https://i.imgur.com/4xkRRJC.png](https://i.imgur.com/4xkRRJC.png)
 
-Deploy the machine - it may take up to 2 minutes to configure (Hard 🙄)
+Deploy the machine - it may take up to 2 minutes to configure (Hard 🥴)
 
 ---
 
