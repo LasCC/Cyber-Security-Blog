@@ -8,7 +8,7 @@ module.exports = {
 			heading: `A place to drop off things that I find interesting and that others might enjoy...`,
 			maxWidth: 680
 		},
-		image: `content/public/websiteImage.png`,
+		image: `public/preview.jpg`,
 		social: [
 			{
 				name: `github`,
@@ -16,7 +16,7 @@ module.exports = {
 			},
 			{
 				name: `linkedin`,
-				url: `https://www.linkedin.com/in/ludovic-coulon-b361ba183/`
+				url: `https://www.linkedin.com/in/ludovic-coulon`
 			},
 			{
 				name: `youtube`,
