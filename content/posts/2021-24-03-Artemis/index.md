@@ -3,7 +3,7 @@ title: "Artemis"
 author: Ludovic COULON
 date: 2021-03-24
 hero: ./images/hero.jpg
-excerpt: "French writeup for the Artemis custom box"
+excerpt: "Writeup for the Artemis CEH custom box"
 ---
 
 ### Setup recon
@@ -60,24 +60,24 @@ nmap -A -vv -p- 172.16.232.7 -oN nmap_result_arthemis
  Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 ```
 
-Comme nous pouvons le voir, plusieurs ports sont ouverts dont le dernier le port **61337** qui cache un petit service ftp avec une connexion Anonymous autorisé.
+As we can see, several ports are open, the last one being port **61337** which hides a small ftp service with an authorized Anonymous connection.
 
 ---
 
-### Accès FTP
+### FTP access
 
 ![./images/Untitled01.png](./images/Untitled01.png)
 
-Credentials : 
+Credentials :
 
 ```txt
 Username : anonymous
-Password : aucun
+Password : none
 ```
 
-Je vais utiliser la commande `mget *` pour récupérer  tous les fichiers présents sur le FTP
+I will use the `mget *` command to retrieve all the files on the FTP
 
-Une fois les fichiers extraits, je vais `grep` les fichiers de log pour récupérer uniquement les code 200 en HTTP
+Once the files are extracted, I'll `grep` the log files to get only the 200 code in HTTP
 
 ```bash
 ❯ cat access.log | grep 200 > access.log.filtered
@@ -102,12 +102,12 @@ Une fois les fichiers extraits, je vais `grep` les fichiers de log pour récupé
 
 ### **LFI TO RCE**
 
-Comme vous pouvez le constater, nous avons une url pas commune pour un site internet.
+As you can see, we have an unusual url for a website.
 
-Je vais lancer un scan de bruteforce de répertoire
+I'll run a bruteforce scan of the directory
 
 ```bash
-# Personnellement j'utilise feroxbuster c'est un outil identique à gobuster ou dirb
+# Personally I use feroxbuster it's a tool identical to gobuster or dirb
 feroxbuster --url http://172.16.232.7/0cdb312366ecf1f493bc83f0fb56adda28125498762f28f1cc40c320300125ce/ --extensions cgi,py,bak,php,pdf,asp,html,xml,json,txt,js -o export_feroxbuster_path_zarb
 ```
 
@@ -132,165 +132,165 @@ feroxbuster --url http://172.16.232.7/0cdb312366ecf1f493bc83f0fb56adda2812549876
 **/language.php**
 ```
 
-Allons jeter un petit coup d'œil pour voir les paths intéressent 👀
+Let's take a little look at the interesting paths 👀
 
 ![./images/Untitled3.png](./images/Untitled3.png)
 
-Un upload, qui va peut-être nous servir pour atteindre la machine 👀
+An upload, which will perhaps be useful to us to reach the machine 👀
 
 ![./images/Untitled4.png](./images/Untitled4.png)
 
-Le répertoire d'upload
+The upload directory
 
 ![./images/Untitled5.png](./images/Untitled5.png)
 
-Un bouton language
+A language button
 
 ![./images/Untitled6.png](./images/Untitled6.png)
 
-Je vais lancer `burp suite` pour tenter d'upload quelques shells
+I'll run `burp suite` to try to upload some shells
 
 ![./images/Untitled7.png](./images/Untitled7.png)
 
-Après avoir intercepté la connexion avec burp je l'ai envoyé dans `Reapter` pour éviter de retaper la requête à chaque essaie.
+After intercepting the connection with burp I sent it to `Reapter` to avoid retyping the request every time I try.
 
-Comme vous pouvez le voir ici j'ai utilisé un reverse shell "*classique*" avec l'aide de [mon extension chrome](https://github.com/LasCC/Hack-Tools) **#AD**
+As you can see here I used a "*classic*" reverse shell with the help of [my chrome extension](https://github.com/LasCC/Hack-Tools) **#AD**
 
 ![./images/Untitled8.png](./images/Untitled8.png)
 
 ![./images/Untitled9.png](./images/Untitled9.png)
 
-Malheureusement, l'application possède un filtre qui check les extensions et nous envoie une erreur dès qu'un fichier uploader n'a pas un `.jpg, .png, .jpeg`
+Unfortunately, the application has a filter that checks the extensions and sends us an error as soon as an uploaded file does not have a `.jpg, .png, .jpeg` extension.
 
-L'erreur en question
+The error in question
 
 ![./images/Untitled10.png](./images/Untitled10.png)
 
-Essayons de bypasser le filtre en ajoutant un `.jpg` 
+Let's try to bypass the filter by adding a `.jpg`.
 
-Et voilà! 🤌  Le filtre a bien été bypasser comme prévu.
+And there you go! 🤌 The filter did bypass as expected.
 
 ![./images/Untitled11.png](./images/Untitled11.png)
 
-Allons voir dans le path `/uploads` si notre backdoor a bien été placé dans le bon dossier.
+Let's check the path `/uploads` to see if our backdoor has been placed in the right folder.
 
-Et comme vous pouvez le constaté, notre backdoor est bien présente
+And as you can see, our backdoor is there
 
-*(Ne faites pas attention aux autres fichiers, j'ai testé plusieurs méthodes de bypass de filtre)*
+*(Don't pay attention to the other files, I tested several methods of bypassing the filter)*
 
 ![./images/Untitled12.png](./images/Untitled12.png)
 
-Lorsque l'on clique sur notre backdoor rien ne ce passe, ce qui est tout à fait logique parce que le serveur apache pense que notre backdoor est une image (d'où le `.jpg` à la fin du fichier uploader)
+When we click on our backdoor nothing happens, which is quite logical because the apache server thinks that our backdoor is an image (hence the `.jpg` at the end of the uploader file)
 
-Revenons maintenant sur le bouton langage que nous avons vu précédemment.
+Now let's go back to the language button we saw earlier.
 
-À première vu, rien de spéciale, mais quelque chose ce cache derrière ce petit bouton.
+At first sight, nothing special, but something is hiding behind this little button.
 
 ![./images/Untitled13.png](./images/Untitled13.png)
 
-Je vais intercepter la connexion avec burp suite pour vous expliquer comme j'ai fait pour avoir un `LFI` que j'ai transformé en `RCE`
+I'll intercept the connection with burp next to explain how I got a `LFI` that I turned into a `RCE`.
 
-Comme vous pouvez le voir, nous avons accès à une variable que nous pouvons exploiter dans l'url, plus précisément la variable `?lang=`
+As you can see, we have access to a variable that we can exploit in the url, more precisely the `?lang=` variable
 
 ![./images/Untitled14.png](./images/Untitled14.png)
 
-Maintenant, je vais utiliser un payload qui est présent sur [mon extension](https://github.com/LasCC/Hack-Tools) **#AD2** qui va nous permettre de faire du `Directory traversal`
+Now I'm going to use a payload that is present on [my extension](https://github.com/LasCC/Hack-Tools) **#AD2** that will allow us to do some directory traversal
 
 ![./images/Untitled15.png](./images/Untitled15.png)
 
 ![./images/Untitled16.png](./images/Untitled16.png)
 
-Prenons un moment pour analyser la situation de notre pentest
+Let's take a moment to analyze the situation of our pentest
 
-- Nous avons upload notre `backdoor en php` mais qui n'est pas encore exécutable par le serveur
-- Nous avons accès à un Directory Traversal avec le fichier `language.php`
+- We have uploaded our `backdoor in php` but it is not yet executable by the server
+- We have access to a Directory Traversal with the `language.php` file
 
-Si nous combinons les deux méthodes d'accès, nous pouvons essayer d'exécuter notre propre `backdoor` depuis le `LFI` découvert plus tôt.
+If we combine the two access methods, we can try to run our own `backdoor` from the `LFI` discovered earlier.
 
 ### RCE (Accès à la machine depuis le www-data)
 
-Avec la combinaison de nos deux méthodes, comme prévu, nous avons réussi à exécuter notre backdoor et donc avoir notre premier accès à la machine 🙌
+With the combination of our two methods, as expected, we managed to execute our backdoor and thus have our first access to the machine 🙌
 
 ![./images/Untitled17.png](./images/Untitled17.png)
 
-```
-# Vu que nous sommes dans le même répertoire, il suffira de remonter sur le répertoire d'upload et de sélectionner notre backdoor" **./uploads/reverseShellA.php5.jpg"**
-GET /0cdb312366ecf1f493bc83f0fb56adda28125498762f28f1cc40c320300125ce/language.php?lang=**./uploads/reverseShellA.php5.jpg** HTTP/1.1
+```bash
+# Since we are in the same directory, we just need to go to the upload directory and select our backdoor."/uploads/reverseShellA.php5.jpg"
+GET /0cdb312366ecf1f493bc83f0fb56adda28125498762f28f1cc40c320300125ce/language.php?lang=./uploads/reverseShellA.php5.jpg HTTP/1.1
 ```
 
 ![./images/Untitled18.png](./images/Untitled18.png)
 
-Pour ma santé mentale, je vais vous montrer comment upgrade un shell TTY classique en shell qui fonctionne parfaitement avec autocomplétion.
+For my sanity, I'll show you how to upgrade a classic TTY shell to a shell that works perfectly with autocomplete.
 
-Pour rappel, cette méthode est disponible directement sur [mon extension chrome](https://github.com/LasCC/Hack-Tools) *#AD3 (promis j'arrête)*
+As a reminder, this method is available directly on [my chrome extension](https://github.com/LasCC/Hack-Tools) *#AD3 (I promise to stop)*
 
 ![./images/Untitled19.png](./images/Untitled19.png)
 
-Et voilà! Nous avons un shell qui fonctionne parfaitement, nous pouvons commencer sur de bonnes bases pour trouver un accès sur un autre utilisateur.
+And that's it! We have a perfectly working shell, we can start with a good basis to find an access on another user.
 
 ![./images/Untitled20.png](./images/Untitled20.png)
 
-Une fois rendu dans le dossier `/var/www/html` on peut apercevoir un dossier `backups-4e45a234079C45bc326b12ce453` qui n'apparait pas sur le fichier de log que nous avons exfiltré du FTP de tout à l'heure.
+Once in the `/var/www/html` folder we can see a `backups-4e45a234079C45bc326b12ce453` folder which does not appear on the log file we exfiltrated from the FTP earlier.
 
-Après quelques minutes à chercher dans chaque petits dossiers et fichiers du répertoire, j'ai attentivement regarder le fichier `users.sql`
+After a few minutes of searching every little folder and file in the directory, I carefully looked at the `users.sql` file
 
 ![./images/Untitled21.png](./images/Untitled21.png)
 
-Et comme vous pouvez le voir sur la ligne surlignée, nous avons notre compte utilisateur `eguillemot` avec un hash `B38E48ED65DF090D475F5F25E030D183BC140ECD`
+And as you can see from the highlighted line, we have our user account `eguillemot` with a hash `B38E48ED65DF090D475F5F25E030D183BC140ECD`
 
 ![./images/Untitled22.png](./images/Untitled22.png)
 
-Pour cracker le hash il existe plusieurs méthodes / outils comme `hashcat` `john` et pleins d'autres encore. 
+To crack the hash there are several methods/tools like `hashcat` `john` and many others.
 
-Mais pour ma part, j'ai utilisé l'utilitaire `crackstation` qui est disponible en ligne.
+But for my part, I used the `crackstation` utility which is available online.
 
 ![./images/Untitled23.png](./images/Untitled23.png)
 
-Et voilà ! Nous avons accès à notre premier utilisateur passant de `www-data` à l'utilisateur `eguillemot`
+And that's it! We have access to our first user from `www-data` to the `eguillemot` user
 
-```
-Identifiant ssh
-Username : eguillemot
-Password : esgi
+```bash
+ssh login
+Username: eguillemot
+Password: esgi
 ```
 
-### Connexion à l'utilisateur eguillemot
+### Login to user eguillemot
 
-```
-# Pour rappel, la connexion SSH est sur le port 25452
+```bash
+# As a reminder, the SSH connection is on port 25452
 ❯ ssh eguillemot@172.16.232.7 -p 25452
 ```
 
 ![./images/Untitled24.png](./images/Untitled24.png)
 
-### Premier flag user
+### First flag
 
 ![./images/Untitled25.png](./images/Untitled25.png)
 
-```
+```bash
 eguillemot@artemis:~$ cat user.txt
 CEH{Wh4t_4_w0nd3rfUl_w3bs1t3}
 ```
 
-Maintenant que nous sommes sur l'utilisateur eguillemot, nous devons trouver un moyen d'accéder à l'utilisateur khenno 
+Now that we are on the user eguillemot, we need to find a way to access the user khenno
 
-Pour ce faire, je vais utiliser un utilitaire très sympathique qui me permet de m'afficher toutes les configurations / fichiers présents sur la machine qui pourrait être compromettant pour un autre utilisateur.
+To do this, I'm going to use a very nice utility that allows me to display all the configurations/files present on the machine that could be compromising for another user.
 
-L'outil `LinEnum` ⬇️
+`LinEnum` Repository ⬇️
 
 [rebootuser/LinEnum](https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh)
 
-Pour éviter des erreurs d'écritures je place le script `LinEnum` dans le répertoire `/dev/shm` c'est un répertoire de développement qui contient normalement de la `shared memory` donc pas de problème d'écriture dans ce type de répertoire.
+To avoid writing errors I put the `LinEnum` script in the directory `/dev/shm` it's a development directory which normally contains `shared memory` so no writing problem in this kind of directory.
 
 ![./images/Untitled26.png](./images/Untitled26.png)
 
-Comme vous pouvez le voir sur le script `LinEnum` nous avons un binaire qui n'est pas normalement présent sur les machines Linux, surtout que le binaire en question à des accès avec l'utilisateur que nous voulons compromettre. 
+As you can see from the `LinEnum` script we have a binary that is not normally present on Linux machines, especially since the binary in question has access to the user we want to compromise. 
 
 ### Reverse engineering
 
-Nous allons nous concentrer maintenant à la partie reverse engineering, pour cet exercice je vais utiliser l'utilitaire `gdb`avec le plugin `peda`
+We will now concentrate on the reverse engineering part, for this exercise I will use the `gdb` utility with the `peda` plugin
 
-Mais avant de commencer, j'ai utiliser `Ghidra`pour qu'il me génère un pseudo-code de l'application me permettant d'avoir un aperçu du fonctionnement.
+But before starting, I used `Ghidra` to generate a pseudo-code of the application so that I can have an idea of how it works.
 
 ![./images/Untitled27.png](./images/Untitled27.png)
 
@@ -317,49 +317,49 @@ Mais avant de commencer, j'ai utiliser `Ghidra`pour qu'il me génère un pseudo-
 }
 ```
 
-Maintenant que nous une idée sur le comportement de l'application, je vais vous expliquer comment reverse le binaire avec `gdb`
+Now that we have an idea of how the application behaves, I'll explain how to reverse the binary with `gdb
 
 ![./images/Untitled28.png](./images/Untitled28.png)
 
-Premièrement nous allons commencer avec un `disass main` puis nous allons placer un breakpoint.
+First we will start with a `disass main` and then we will place a breakpoint.
 
-Nous voilà dans la stack ! 🥴
+Here we are in the stack! 🥴
 
 ![./images/Untitled29.png](./images/Untitled29.png)
 
-Je vais vous éviter toutes les informations futiles et passer directement dans le vif du sujet.
+I'll avoid all the futile information and go straight to the heart of the matter.
 
-Nous sommes, dans le moment de la stack ou le programme nous demande d'entrer une valeur, pour le test je vais mettre volontairement des AAAA.
+We are, in the moment of the stack or the program asks us to enter a value, for the test I will voluntarily put AAAA.
 
 ![./images/Untitled30.png](./images/Untitled30.png)
 
 ![./images/Untitled31.png](./images/Untitled31.png)
 
-Nous arrivons maintenant au moment de la comparaison
+Now we come to the moment of comparison
 
 ![./images/Untitled32.png](./images/Untitled32.png)
 
-Et comme vous pouvez le voir le programme viens de jumper vers une fonction de leave, ce qui nous prouve que la comparaison a échoué 
+And as you can see the program has just jumpered to a leave function, which proves to us that the comparison has failed
 
 ![./images/Untitled33.png](./images/Untitled33.png)
 
-Mais comme vous pouvez le voir, il compare le string `[]A]A]A^A_A` avec nos `AAAA`entré manuellement.
+But as you can see, it compares the string `[]A]A^A_A` with our manually entered `AAAA`.
 
 ![./images/Untitled34.png](./images/Untitled34.png)
 
-### Exploitation du binaire
+### Exploiting the binary
 
-Comme vu précédemment, nous avons trouvé un string `[]A]A]A^A_A`, nous allons l'essayer sur la machine utilisateur pour essayer de faire spawn un shell avec l'utilisateur `khennou`
+As seen before, we have found a string `[]A]A^A_A`, we will try it on the user machine to try to spawn a shell with the user `khennou`.
 
-Et voilà ! Nous venons d'exploiter le binaire passant de `www-data` → `eguillemot` → `khennou`
+That's it! We have just exploited the binary passing from `www-data` → `eguillemot` → `khennou`
 
 ![./images/Untitled35.png](./images/Untitled35.png)
 
-Une fois sur le dernier utilisateur il suffira de faire un petit `sudo -l` pour voir s'il fait partie des `sudoers`
+Once on the last user, it will be enough to make a small `sudo -l` to see if it belongs to the `sudoers`.
 
 ![./images/Untitled36.png](./images/Untitled36.png)
 
-C'est parfait, nous avons accès au root avec la commande suivante en `nopasswd`
+That's fine, we have access to root with the following command in `nopasswd`.
 
 ```bash
 sudo su
