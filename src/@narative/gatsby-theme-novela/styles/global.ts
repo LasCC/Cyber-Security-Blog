@@ -101,7 +101,7 @@ export const globalStyles = css`
 	kbd,
 	pre,
 	samp {
-		ont-family: monospace;
+		font-family: monospace;
 		color: #db0909;
 		padding: 8px;
 	}

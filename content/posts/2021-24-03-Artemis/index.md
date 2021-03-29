@@ -3,7 +3,7 @@ title: "Artemis"
 author: Ludovic COULON
 date: 2021-03-24
 hero: ./images/hero.jpg
-excerpt: "Writeup for the Artemis CEH custom box"
+excerpt: "This room was designed for CEH course, practise Web exploitation, cracking hashes and privileges escalation"
 ---
 
 ### Setup recon
