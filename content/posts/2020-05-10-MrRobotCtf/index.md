@@ -358,8 +358,4 @@ cat key-3-of-3.txt
 04787ddef27c3dee1ee161b21670b4e4
 ```
 
-<center>
-  <a href="https://tryhackme.com/p/boperXD" target="_blank">
-    <img src="https://tryhackme-badges.s3.amazonaws.com/boperXD.png" alt="TryhackMeProfile" />
-  </a>
-</center>
+

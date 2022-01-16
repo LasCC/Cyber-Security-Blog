@@ -170,8 +170,3 @@ As you can see charlie can use sudo with VI let's see if there is a privesc in g
 flag{cec*****************2124}
 ```
 
-<center>
-  <a href="https://tryhackme.com/p/boperXD" target="_blank">
-    <img src="https://tryhackme-badges.s3.amazonaws.com/boperXD.png" alt="TryhackMeProfile" />
-  </a>
-</center>

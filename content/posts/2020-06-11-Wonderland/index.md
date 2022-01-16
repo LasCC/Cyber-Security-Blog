@@ -352,8 +352,4 @@ root@wonderland:/root# cat /home/alice/root.txt
 thm{Twinkle, twinkle, little bat! How I wonder what you’re at!}
 ```
 
-<center>
-  <a href="https://tryhackme.com/p/boperXD" target="_blank">
-    <img src="https://tryhackme-badges.s3.amazonaws.com/boperXD.png" alt="TryhackMeProfile" />
-  </a>
-</center>
+

@@ -202,8 +202,4 @@ vi
 THM{8d6f163a87a1c80de27a4fd61aef0f3a0ecf9161}
 ```
 
-<center>
-  <a href="https://tryhackme.com/p/boperXD" target="_blank">
-    <img src="https://tryhackme-badges.s3.amazonaws.com/boperXD.png" alt="TryhackMeProfile" />
-  </a>
-</center>
+

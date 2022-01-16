@@ -201,8 +201,4 @@ securi-tay2020_{p3ugu1n-hunt3r-3xtr40rd1n41r3}
 securi-tay2020_{6f125d32f38fb8ff9e720d2dbce2210a}
 ```
 
-<center>
-  <a href="https://tryhackme.com/p/boperXD" target="_blank">
-    <img src="https://tryhackme-badges.s3.amazonaws.com/boperXD.png" alt="TryhackMeProfile" />
-  </a>
-</center>
+

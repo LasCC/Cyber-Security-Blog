@@ -307,8 +307,4 @@ root@ubuntu:~$ cat root.txt
 THM{c89b2e39c83067503a6508b21ed6e962}
 ```
 
-<center>
-  <a href="https://tryhackme.com/p/boperXD" target="_blank">
-    <img src="https://tryhackme-badges.s3.amazonaws.com/boperXD.png" alt="TryhackMeProfile" />
-  </a>
-</center>
+

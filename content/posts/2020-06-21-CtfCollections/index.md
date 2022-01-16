@@ -439,8 +439,4 @@ THM{700_5m4l_3yy}
 Easter 20: THM{17_w45_m3_4ll_4l0n6}
 ```
 
-<center>
-  <a href="https://tryhackme.com/p/boperXD" target="_blank">
-    <img src="https://tryhackme-badges.s3.amazonaws.com/boperXD.png" alt="TryhackMeProfile" />
-  </a>
-</center>
+

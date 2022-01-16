@@ -212,8 +212,4 @@ Now let's get a root access 😍
 uJr6zRgetan[nope 👁👄👁]bBKz2T
 ```
 
-<center>
-  <a href="https://tryhackme.com/p/boperXD" target="_blank">
-    <img src="https://tryhackme-badges.s3.amazonaws.com/boperXD.png" alt="TryhackMeProfile" />
-  </a>
-</center>
+

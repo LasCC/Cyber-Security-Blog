@@ -71,8 +71,4 @@ As you can see the script created some directory, let's see if the password is i
 Th**_**_*_****_****_******_*******!
 ```
 
-<center>
-  <a href="https://tryhackme.com/p/boperXD" target="_blank">
-    <img src="https://tryhackme-badges.s3.amazonaws.com/boperXD.png" alt="TryhackMeProfile" />
-  </a>
-</center>
+

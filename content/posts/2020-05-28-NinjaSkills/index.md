@@ -112,8 +112,4 @@ dr-xr-xr-x 25 root     root       4096 May 28 16:18 ..
 -rwxrwxr-x  1 new-user new-user  13545 Oct 23  2019 8V2L
 ```
 
-<center>
-  <a href="https://tryhackme.com/p/boperXD" target="_blank">
-    <img src="https://tryhackme-badges.s3.amazonaws.com/boperXD.png" alt="TryhackMeProfile" />
-  </a>
-</center>
+
