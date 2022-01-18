@@ -38,7 +38,7 @@ Of course, the firmware is available on the official website of the manufacturer
 
 In the United States, most wireless devices have an FCC (Federal Communications Commission) identifier, the identifier can allow us to have images of the open device for example and more...
 
-![Image](https://res.craft.do/user/full/4a8562f2-5b60-7713-0225-13035f33d489/doc/2181A7FB-F660-47A9-B992-E52798D85DD0/9FD039C5-F9B5-45C1-9022-47EDE36FA690_2/IvOyX0pIjPhhALeB1qQxANFYsgxzBNpwcnyOQuxPKLMz/Image)
+![./images/Image01.png](./images/Image01.png)
 
 The login that I've retrieved is the following: `TE7WR841NV14`
 
@@ -48,19 +48,19 @@ We have clear pictures of the device, chips and even the motherboard which is pe
 
 ### List of electronic chips present in the router :
 
-![Image](https://res.craft.do/user/full/4a8562f2-5b60-7713-0225-13035f33d489/doc/2181A7FB-F660-47A9-B992-E52798D85DD0/2E14C0CB-DC5F-4FE3-846F-BAFADADDC3F9_2/cXecd8Nt3C4wYKBN7z57U69UBxJMX4T9ytbGJzmHU7Iz/Image)
+![./images/Image02.png](./images/Image02.png)
 
 Documentation : [Rutronik24 Distributor](https://www.rutronik24.com/product/zentel/a3s56d40gtp-50/13858310.html)
 
 `A3S56D40GTP-50L` corresponds to SDRAM **(DDR-SDRAM 256Mb 16Mx16 200MHz)** memory
 
-![Image](https://res.craft.do/user/full/4a8562f2-5b60-7713-0225-13035f33d489/doc/2181A7FB-F660-47A9-B992-E52798D85DD0/247BDE9D-AC61-47DE-A440-45B6661674EE_2/7xfyxQaoJyA0oXv9bv6iGBM4VE4Lne4yRtpzglucCyYz/Image)
+![./images/Image03.png](./images/Image03.png)
 
 Documentation : [MT7628K/N/A](https://www.mediatek.com/products/homeNetworking/mt7628k-n-a)
 
 `MT7628K/N/A` the CPU.
 
-![Image](https://res.craft.do/user/full/4a8562f2-5b60-7713-0225-13035f33d489/doc/2181A7FB-F660-47A9-B992-E52798D85DD0/A492EE21-F0BE-4E3D-B6A8-94F2ABAB2BAD_2/IEcnVcThibN5Fd7h51ENlC9pYVIyGMfSsxiPyBZcQ2Yz/Image)
+![./images/Image04.png](./images/Image04.png)
 
 > Legend :
 
@@ -85,7 +85,7 @@ Generally the UART is quite easy to locate on the PCB (Printed Circuit Board) wi
 
 In our case we are lucky, on the PCB we have the signification of the four pins right next to it.
 
-![Image](https://res.craft.do/user/full/4a8562f2-5b60-7713-0225-13035f33d489/doc/2181A7FB-F660-47A9-B992-E52798D85DD0/52FA33B7-7EA7-4A51-9698-346F3E49930B_2/aReRcA50AtyPy1LS2UEgpHo2wXgk9UsqXbabzdyDBrQz/Image)
+![./images/Image05.png](./images/Image05.png)
 
 > Legend :
 
@@ -98,17 +98,17 @@ For our case study, we will only use 3 pins `GND` `RX` & `TX` , now what tool ar
 
 As seen previously at the beginning of the article, we will use a USB to UART (you can find the reference at the beginning of the article).
 
-![Image](https://res.craft.do/user/full/4a8562f2-5b60-7713-0225-13035f33d489/doc/2181A7FB-F660-47A9-B992-E52798D85DD0/CCC92BF3-D570-4F9F-B26A-AF1A349CAD8E_2/GmAvMA9Mry4vxDhPHwxYbEGNer2xWouQbykbk8zgXmUz/Image)
+![./images/Image06.png](./images/Image06.png)
 
-![Image](https://res.craft.do/user/full/4a8562f2-5b60-7713-0225-13035f33d489/doc/2181A7FB-F660-47A9-B992-E52798D85DD0/5472CADC-9F8F-4E33-9E5F-D4A08C26D4B9_2/y9YOI3dcbDz5oQLrnpWKo9DVOCmbUJVGgzuoE7IJCaEz/Image)
+![./images/Image07.png](./images/Image07.png)
 
-![Image](https://res.craft.do/user/full/4a8562f2-5b60-7713-0225-13035f33d489/doc/2181A7FB-F660-47A9-B992-E52798D85DD0/E5DA9109-4050-44DC-AF62-34054D32963F_2/pIV1BDVBmyhM1lmZ1l4Cf6MN7lLgj5vZdMk7eG3DzRwz/Image)
+![./images/Image08.png](./images/Image08.png)
 
 In order for the two devices to communicate, we need to invert the `RX` and `TX` to ensure proper communication between them as seen above.
 
 On some USB to UART, a switch is present to know what voltage we have to put, to be sure, we will measure with the multimeter the voltage of the router.
 
-![Image](https://res.craft.do/user/full/4a8562f2-5b60-7713-0225-13035f33d489/doc/2181A7FB-F660-47A9-B992-E52798D85DD0/828A57E0-CC59-4A71-ABBA-E45F6575855B_2/8IerJFe4vjcEzHXvxvkNh2OIqTw1JqjmaoC5FJeTVqcz/Image)
+![./images/Image09.png](./images/Image09.png)
 
 The measurement has been done on the VCC pin and GND.
 
@@ -122,15 +122,15 @@ To start, we'll try to find our USB on our machine, for this I'm going to use a 
 brew install lsusb
 ```
 
-![Image](https://res.craft.do/user/full/4a8562f2-5b60-7713-0225-13035f33d489/doc/2181A7FB-F660-47A9-B992-E52798D85DD0/65AF2646-D8A2-4738-A4AC-012C9BA8D61E_2/1MObg5pDAKPhD9CxkadA91XdKr9UVaHN7dZaqSyQo8oz/Image)
+![./images/Image10.png](./images/Image10.png)
 
 As you can see the USB key is well recognized on the computer. Now we will obtain the PATH of the USB with the following command:
 
-```Bash
+```bash
 ls /dev/ | grep -i usb
 ```
 
-![Image](https://res.craft.do/user/full/4a8562f2-5b60-7713-0225-13035f33d489/doc/2181A7FB-F660-47A9-B992-E52798D85DD0/D36CE751-5C23-4DCD-9959-8940B4A3EA0B_2/zmrsLIPy3CdNxbiXz6lshOsYnEowLl2NfgxaDfxxdFEz/Image)
+![./images/Image11.png](./images/Image11.png)
 
 Once we have retrieved the value, we will use the `screen` command
 
@@ -141,7 +141,7 @@ X3.64) and ISO 2022 standards (e.g. insert/delete line and support for multiple 
 There is a scrollback history buffer for each virtual terminal and a copy-and-paste mechanism
 that allows moving text regions between windows.*
 
-```shell
+```bash
 screen /dev/tty.usbserial-14210 115200
 screen [Your own usb PATH] [BAUD rate]
 ```
@@ -178,11 +178,11 @@ Do a `screen -ls` [https://i.imgur.com/pJnhCIf.png](https://i.imgur.com/pJnhCIf.
 
 Once the UBOOT is finished, we are directly in a Linux terminal with some classical commands. We can collect the passwd of the device and much more.
 
-![Image.png](https://res.craft.do/user/full/4a8562f2-5b60-7713-0225-13035f33d489/doc/2181A7FB-F660-47A9-B992-E52798D85DD0/D5DB4012-79B3-4E13-84A2-3B078E2D7400_2/7sSrhTM4pDfNwqzOcx4OxGdVehfIuVbCZWxDCbZmeJMz/Image.png)
+![./images/Image12.png](./images/Image12.png)
 
 With `john` , as you can see, the admin password was bruteforced in a few seconds
 
-![Image.png](https://res.craft.do/user/full/4a8562f2-5b60-7713-0225-13035f33d489/doc/2181A7FB-F660-47A9-B992-E52798D85DD0/20E90B7B-43E3-4D85-8750-C6EAB85BD463_2/iOuOjky30CvxNWr6B0DTGTxPwq7ciY2yysUK806fticz/Image.png)
+![./images/Image13.png](./images/Image13.png)
 
 ```Bash
 admin:1234
@@ -190,7 +190,7 @@ admin:1234
 
 Now that we have a shell, we are going to upload a new **busybox** to have more binaries on our router to achieve this we will use `TFTP`
 
-![Image.png](https://res.craft.do/user/full/4a8562f2-5b60-7713-0225-13035f33d489/doc/2181A7FB-F660-47A9-B992-E52798D85DD0/F776DC69-D984-43AE-923B-E395DC0D73D9_2/tv93XIinNWLuqHXce1E1KHrDIsZp1aD63x4MTQUCNkUz/Image.png)
+![./images/Image14.png](./images/Image14.png)
 
 For our case study, we will download the `mipsel` version (little indian)
 
@@ -204,7 +204,7 @@ The `tftp` command to run on the router:
 tftp -g -r busybox-mipsel 192.168.0.100
 ```
 
-![Image.png](https://res.craft.do/user/full/4a8562f2-5b60-7713-0225-13035f33d489/doc/2181A7FB-F660-47A9-B992-E52798D85DD0/B2233433-034E-4C66-B355-677380E64E26_2/sItaDGeaeulmVqvnJtYJyctch4fZJBkyOVlQD8O5UQoz/Image.png)
+![./images/Image15.png](./images/Image15.png)
 
 ----
 
@@ -219,11 +219,11 @@ Now we will see how to connect the different components to make it work perfectl
 
 1. Connect the SOP to the programmer
 
-![Image](https://res.craft.do/user/full/4a8562f2-5b60-7713-0225-13035f33d489/doc/2181A7FB-F660-47A9-B992-E52798D85DD0/00E3B882-30C6-4D66-B909-D5011A04DADD_2/wBoOpfkZDC12Oou6sb1ormiOLzx2U8lk8a3vEjLKwosz/Image)
+![./images/Image17.png](./images/Image17.png)
 
 The red wire must be on the connector n°1.
 
-![Image](https://res.craft.do/user/full/4a8562f2-5b60-7713-0225-13035f33d489/doc/2181A7FB-F660-47A9-B992-E52798D85DD0/BD349032-10EA-4BD3-B38F-047092829A0B_2/aZlhugzBjxU2MTAYD3eamZen9HdZJQDvBwZN6umMs1Az/Image)
+![./images/Image18.png](./images/Image18.png)
 
 Rear view of the different connectors.
 
@@ -231,13 +231,13 @@ When all the connections have been made, we will see next how to find the marker
 
 1. How to properly place the clamp on the PCB
 
-![Image](https://res.craft.do/user/full/4a8562f2-5b60-7713-0225-13035f33d489/doc/2181A7FB-F660-47A9-B992-E52798D85DD0/3530937E-91CD-4A12-9317-0FBEF17FEF1D_2/1lKOfkNiDywXXq1l2croCSvYoRzoGIbzZRvNheWxYk4z/Image)
+![./images/Image19.png](./images/Image19.png)
 
 As you can see above, we have a small indication that will allow us to place the clip with the red wire in the direction of the circle placed on the PCB.
 
 When the clamp is placed on the EPROM and the router is turned on, go to your terminal to launch the utility `flashrom` under Linux / macOS and on Windows I advise you to follow [this article](https://www.instructables.com/CH341A-Programmer/).
 
-![Image.png](https://res.craft.do/user/full/4a8562f2-5b60-7713-0225-13035f33d489/doc/2181A7FB-F660-47A9-B992-E52798D85DD0/B75D28CB-9151-4B47-8973-CEFA6DED099A_2/yJX2YGG9jnAuHHzlx1I6lTwgWy2dxsYqoEbyQxHNdEsz/Image.png)
+![./images/Image20.png](./images/Image20.png)
 
 ```Bash
 flashrom --programmer ch341a_spi -r dump.bin
@@ -248,9 +248,9 @@ flashrom --programmer [programmer] -r [output]
 
 When everything is properly dumped, you can do a `binwalk -e [dump]` to extract the files.
 
-![Image.png](https://res.craft.do/user/full/4a8562f2-5b60-7713-0225-13035f33d489/doc/2181A7FB-F660-47A9-B992-E52798D85DD0/4A032204-322D-4DD8-96B7-F5B3593FC8FA_2/gsfb5AKynpKj8dvnLrX9inx2xrkK3MLP1ca6j8uj3bQz/Image.png)
+![./images/Image21.png](./images/Image21.png)
 
-![Image.png](https://res.craft.do/user/full/4a8562f2-5b60-7713-0225-13035f33d489/doc/2181A7FB-F660-47A9-B992-E52798D85DD0/46517DC4-11D6-4CB5-8431-E76DBB16FA61_2/CChvULljAmCt93tsztvpPhYG5uyWy18UpiDYRtARlGcz/Image.png)
+![./images/Image22.png](./images/Image22.png)
 
 This is where the first part ends in the second we will see how to exploit what we have dumped.
 
