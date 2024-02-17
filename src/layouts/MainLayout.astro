@@ -1,0 +1,33 @@
+---
+import "@fontsource-variable/rubik";
+import "../styles/base.css";
+
+import { ViewTransitions } from "astro:transitions";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  heroImage?: string;
+}
+
+const { title, description, heroImage } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead {title} {description} image={heroImage} />
+    <ViewTransitions />
+  </head>
+  <body class="bg-[#070707] text-stone-200">
+    <Header />
+    <main class="max-w-5xl px-3 md:px-6 mx-auto">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+  <script src="https://beamanalytics.b-cdn.net/beam.min.js" data-token=`${import.meta.env.BEAMTOKEN}` async defer></script>
+</html>

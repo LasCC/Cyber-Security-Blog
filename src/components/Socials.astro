@@ -1,0 +1,19 @@
+---
+import { SOCIALS } from "../config";
+import socialicons from "../socialicons";
+---
+
+<div class="flex items-center justify-center space-x-2">
+  {
+    SOCIALS.filter((social) => social.active).map((social) => (
+      <a
+        href={social.href}
+        aria-label={social.linkTitle}
+        title={social.linkTitle}
+      >
+        <Fragment set:html={socialicons[social.name]} />
+        <span class="sr-only">{social.linkTitle}</span>
+      </a>
+    ))
+  }
+</div>

@@ -1,0 +1,15 @@
+---
+import { SITE_TITLE } from "../config";
+import Socials from "./Socials.astro";
+---
+
+<footer class="border-t border-zinc-800 mt-16 font-light">
+  <div class="py-4">
+    <div class="flex max-w-5xl px-3 md:px-6 mx-auto">
+      <div class="flex items-center justify-between w-full">
+        <p class="text-center">&copy; 2024 - {SITE_TITLE}</p>
+        <Socials />
+      </div>
+    </div>
+  </div>
+</footer>

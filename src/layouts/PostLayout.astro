@@ -1,0 +1,49 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import FormattedDate from "../components/FormattedDate.astro";
+import MainLayout from "./MainLayout.astro";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+---
+
+<MainLayout title={title} description={description}>
+  <section class="max-w-3xl mx-auto my-8">
+    {
+      heroImage && (
+        <div class="border border-zinc-800">
+          <img
+            src={heroImage}
+            alt={title}
+            class="w-full aspect-[2/1] object-cover"
+          />
+        </div>
+      )
+    }
+    <div>
+      <div class="py-6 border-b border-zinc-800">
+        <h1 class="text-center text-4xl font-semibold" transition:name={title}>
+          {title}
+        </h1>
+        <div class="font-light text-sm text-center">
+          <FormattedDate date={pubDate} />
+          {
+            updatedDate && (
+              <>
+                <span>&roarr;</span>
+                <div class=" text-zinc-500 inline-block">
+                  <FormattedDate date={updatedDate} />
+                </div>
+              </>
+            )
+          }
+        </div>
+      </div>
+      <article class="prose prose-invert py-8 mx-auto">
+        <slot />
+      </article>
+    </div>
+  </section>
+</MainLayout>

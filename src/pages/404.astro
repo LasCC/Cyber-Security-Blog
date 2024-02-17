@@ -1,0 +1,18 @@
+---
+import { SITE_DESCRIPTION, SITE_TITLE } from "../config";
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout
+  title={`404 Not Found | ${SITE_TITLE}`}
+  description={SITE_DESCRIPTION}
+>
+  <div class="flex items-center justify-center flex-col py-16">
+    <h1>404 Not Found</h1>
+    <p>
+      The page you are looking for does not exist. Please check the URL and try
+      again.
+    </p>
+    <div class="py-8"><a href="/">Go Back</a></div>
+  </div>
+</MainLayout>

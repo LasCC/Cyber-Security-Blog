@@ -1,0 +1,33 @@
+body {
+  font-family: "Rubik Variable", sans-serif;
+  overflow-y: scroll;
+}
+
+/* Custom scrollbar for webkit browsers */
+/* Vertical scrollbar */
+::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar for vertical scrolling */
+  height: 5px; /* Height of the scrollbar for horizontal scrolling */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Thumb color */
+  border-radius: 5px; /* Round corners for the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Thumb color on hover */
+}
+
+/* Horizontal scrollbar */
+::-webkit-scrollbar-thumb:horizontal {
+  background: #888; /* Thumb color for horizontal scrolling */
+}
+
+::-webkit-scrollbar-thumb:horizontal:hover {
+  background: #555; /* Thumb color on hover for horizontal scrolling */
+}

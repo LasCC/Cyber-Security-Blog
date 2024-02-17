@@ -1,0 +1,27 @@
+---
+import FeaturedPosts from "../components/FeaturedPosts.astro";
+import RecentPosts from "../components/RecentPosts.astro";
+import SearchPosts from "../components/SearchPosts.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../config";
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <div class="py-6">
+    <div class="text-4xl max-w-lg font-medium pt-16 pb-11">
+      <h1
+        class="bg-gradient-to-r from-slate-100 to-slate-400 inline-block text-transparent bg-clip-text"
+      >
+        Ludovic COULON
+      </h1>
+    </div>
+    <p class="pb-5 bg-gradient-to-r from-slate-100 to-slate-400 inline-block text-transparent bg-clip-text">
+      Aspiring DFIR Analyst and experienced CSIRT Analyst, dedicated to investigating and mitigating cybersecurity incidents and protecting organizations from cyber threats.
+    </p>
+    <SearchPosts />
+    <div class="border-t border-zinc-800 my-10"></div>
+    <FeaturedPosts />
+    <div class="border-t border-zinc-800 my-12"></div>
+    <RecentPosts />
+  </div>
+</MainLayout>

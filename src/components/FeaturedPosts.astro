@@ -1,0 +1,27 @@
+---
+import { getCollection } from "astro:content";
+
+import PostCard from "../components/PostCard.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const featuredPost = posts
+  .filter((post) => post.data.featured === true)
+  .slice(0, 3);
+---
+
+<h2 class="text-2xl font-bold mb-4">Featured Posts</h2>
+<ul class="md:w-2/3">
+  {
+    featuredPost.map((post) => (
+      <PostCard
+        title={post.data.title}
+        desc={post.data.description}
+        pubDate={post.data.pubDate}
+        href={post.slug}
+      />
+    ))
+  }
+</ul>

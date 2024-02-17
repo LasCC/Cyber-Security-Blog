@@ -1,0 +1,26 @@
+---
+import FormattedDate from "./FormattedDate.astro";
+
+interface Props {
+  title: string;
+  desc: string;
+  href: string;
+  pubDate: Date;
+}
+
+const { href, title, desc, pubDate } = Astro.props;
+---
+
+<li class="py-6">
+  <a href={`/blog/${href}`}>
+    <div class="space-y-2 flex flex-col">
+      <div>
+        <div class="font-light text-sm">
+          <FormattedDate date={pubDate} />
+        </div>
+        <h2 transition:name={title}>{title}</h2>
+      </div>
+      <p class="font-light text-slate-300">{desc}</p>
+    </div>
+  </a>
+</li>

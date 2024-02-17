@@ -1,0 +1,45 @@
+---
+import { getCollection } from "astro:content";
+
+import PostCard from "../components/PostCard.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const latestPost = posts.slice(0, 4);
+---
+
+<h2 class="text-2xl font-bold mb-4">Recent Posts</h2>
+<ul class="md:w-2/3">
+  {
+    latestPost.map((post) => (
+      <PostCard
+        title={post.data.title}
+        desc={post.data.description}
+        pubDate={post.data.pubDate}
+        href={post.slug}
+      />
+    ))
+  }
+</ul>
+<a href="/blog">
+  <button type="button" class="text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-large px-5 py-2.5 pt-3 text-center me-2 mb-2">
+    Check all the Posts
+     <svg
+      width="6"
+      height="10"
+      viewBox="0 0 6 10"
+      fill="none"
+      class="inline-block ml-2"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M1 9L5 5L1 1"
+        stroke="black"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+    </svg>
+  </button>
+</a>
