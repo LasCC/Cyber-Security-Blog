@@ -3,28 +3,32 @@ import { SITE_LOGO, SITE_TITLE } from "../config";
 ---
 
 <header
-class="flex items-center justify-between py-6 max-w-5xl px-3 md:px-6 mx-auto"
+  class="flex items-center justify-between py-6 max-w-5xl px-3 md:px-6 mx-auto"
 >
   <a href="/">
     {
       SITE_LOGO ? (
-      <img src={SITE_LOGO} alt={SITE_TITLE} class="w-8 h-8" />
+        <img src={SITE_LOGO} alt={SITE_TITLE} class="w-8 h-8" />
       ) : (
-      <span class="text-xl font-bold">{SITE_TITLE}</span>
+        <span class="text-xl font-bold">{SITE_TITLE}</span>
       )
     }
   </a>
   <nav>
-  <ul class="flex items-center justify-center space-x-5">
-    <li>
-      <a href="/" class="hover:border-b-2 hover:border-lime-500">Home</a>
-    </li>
-    <li>
-      <a href="/blog" class="hover:border-b-2 hover:border-lime-500">Posts</a>
-    </li>
-    <li>
-      <a href="https://mindmap.ludovic-coulon.com/" target="_blank" class="hover:border-b-2 hover:border-lime-500">Mindmaps</a>
-    </li>
-  </ul>
-</nav>
+    <ul class="flex items-center justify-center space-x-5">
+      <li>
+        <a href="/" class="hover:border-b-2 hover:border-lime-500">Home</a>
+      </li>
+      <li>
+        <a href="/blog" class="hover:border-b-2 hover:border-lime-500">Posts</a>
+      </li>
+      <li>
+        <a
+          href="https://mindmap.ludovic-coulon.com/"
+          target="_blank"
+          class="hover:border-b-2 hover:border-lime-500">Mindmaps</a
+        >
+      </li>
+    </ul>
+  </nav>
 </header>

@@ -1,4 +1,5 @@
 ---
+import SearchPosts from "../components/SearchPosts.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../config";
 import MainLayout from "../layouts/MainLayout.astro";
 ---
@@ -8,11 +9,38 @@ import MainLayout from "../layouts/MainLayout.astro";
   description={SITE_DESCRIPTION}
 >
   <div class="flex items-center justify-center flex-col py-16">
-    <h1>404 Not Found</h1>
-    <p>
+    <p
+      class="p-3 text-sm font-medium bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 rounded-full text-black cursor-pointer"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        class="w-6 h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+        ></path>
+      </svg>
+    </p>
+    <h1
+      class="pt-4 text-3xl pb-3 bg-gradient-to-r from-slate-100 to-slate-400 inline-block text-transparent bg-clip-text"
+    >
+      404 Not Found
+    </h1>
+    <p
+      class="bg-gradient-to-l from-slate-100 to-slate-400 inline-block text-transparent bg-clip-text"
+    >
       The page you are looking for does not exist. Please check the URL and try
       again.
     </p>
-    <div class="py-8"><a href="/">Go Back</a></div>
+    <br />
+    <div class="pt-4 pb-6 w-2/4">
+      <SearchPosts class="w-full" />
+    </div>
   </div>
 </MainLayout>
