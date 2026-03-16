@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://ludovic-coulon.com/sitemap-index.xml
