@@ -18,7 +18,7 @@ const latestPost = posts.slice(0, 4);
         title={post.data.title}
         desc={post.data.description}
         pubDate={post.data.pubDate}
-        href={post.slug}
+        href={post.id}
       />
     ))
   }
@@ -26,7 +26,7 @@ const latestPost = posts.slice(0, 4);
 <a href="/blog">
   <button
     type="button"
-    class="text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-large px-5 py-2.5 pt-3 text-center me-2 mb-2"
+    class="text-gray-900 bg-linear-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-linear-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-large px-5 py-2.5 pt-3 text-center me-2 mb-2"
   >
     Check all the Posts
     <svg
