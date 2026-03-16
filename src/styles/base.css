@@ -1,33 +1,180 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-rubik: "Rubik Variable", sans-serif;
+}
+
 body {
-  font-family: "Rubik Variable", sans-serif;
+  font-family: var(--font-rubik);
   overflow-y: scroll;
 }
 
 /* Custom scrollbar for webkit browsers */
-/* Vertical scrollbar */
 ::-webkit-scrollbar {
-  width: 5px; /* Width of the scrollbar for vertical scrolling */
-  height: 5px; /* Height of the scrollbar for horizontal scrolling */
+  width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent; /* Track color */
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888; /* Thumb color */
-  border-radius: 5px; /* Round corners for the thumb */
+  background: #888;
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Thumb color on hover */
+  background: #555;
 }
 
-/* Horizontal scrollbar */
 ::-webkit-scrollbar-thumb:horizontal {
-  background: #888; /* Thumb color for horizontal scrolling */
+  background: #888;
 }
 
 ::-webkit-scrollbar-thumb:horizontal:hover {
-  background: #555; /* Thumb color on hover for horizontal scrolling */
+  background: #555;
+}
+
+/* Inline code styling for prose */
+.prose :where(code):not(:where(pre code)) {
+  background-color: #1e1e2e;
+  border: 1px solid #313244;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.875em;
+  color: #cdd6f4;
+  word-break: break-word;
+}
+
+.prose :where(code):not(:where(pre code))::before,
+.prose :where(code):not(:where(pre code))::after {
+  content: none;
+}
+
+/* Collapsible mermaid diagram */
+.mermaid-wrapper {
+  border: 1px solid #313244;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 1.5rem 0;
+}
+
+.mermaid-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #1e1e2e;
+  border: none;
+  color: #cdd6f4;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-family: var(--font-rubik);
+}
+
+.mermaid-toggle:hover {
+  background: #262637;
+}
+
+.mermaid-toggle svg {
+  transition: transform 0.2s ease;
+}
+
+.mermaid-toggle[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.mermaid-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+.mermaid-content.expanded {
+  max-height: 3000px;
+}
+
+.mermaid-content .mermaid {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+.mermaid-fullscreen-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 auto 1rem;
+  padding: 10px 20px;
+  background: #1e1e2e;
+  border: 1px solid #313244;
+  border-radius: 6px;
+  color: #cdd6f4;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-family: var(--font-rubik);
+  transition: all 0.15s ease;
+}
+
+.mermaid-fullscreen-btn:hover {
+  background: #313244;
+  color: #fff;
+  border-color: #e94560;
+}
+
+.mermaid-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.95);
+  cursor: zoom-out;
+  overflow: auto;
+}
+
+.mermaid-lightbox-inner {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.mermaid-lightbox-inner svg {
+  width: 90vw !important;
+  height: auto !important;
+  max-height: none;
+}
+
+/* Clickable images - lightbox */
+.prose img {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.prose img:hover {
+  opacity: 0.85;
+}
+
+.img-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  padding: 2rem;
+}
+
+.img-lightbox img {
+  max-width: 95vw;
+  max-height: 95vh;
+  object-fit: contain;
+  border-radius: 4px;
 }
