@@ -45,8 +45,8 @@ const breadcrumbLd = {
 ---
 
 <MainLayout title={title} description={description} heroImage={heroImage} type="article" pubDate={pubDate} updatedDate={updatedDate}>
-  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
   <section class="max-w-3xl mx-auto my-8">
     <nav aria-label="Breadcrumb" class="text-sm text-zinc-400 mb-4">
       <ol class="flex items-center gap-2">
