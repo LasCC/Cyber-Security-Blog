@@ -46,4 +46,96 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
       </article>
     </div>
   </section>
+  <script is:inline type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: "dark",
+      themeVariables: {
+        primaryColor: "#1a1a2e",
+        primaryTextColor: "#fff",
+        primaryBorderColor: "#e94560",
+        lineColor: "#e94560",
+        secondaryColor: "#0f3460",
+        tertiaryColor: "#16213e",
+        fontFamily: "ui-monospace, monospace",
+        fontSize: "14px",
+      },
+    });
+
+    // Wrap mermaid blocks in collapsible containers
+    const codeBlocks = document.querySelectorAll("pre > code.language-mermaid");
+    for (const block of codeBlocks) {
+      const pre = block.parentElement;
+
+      const wrapper = document.createElement("div");
+      wrapper.className = "mermaid-wrapper";
+
+      const toggle = document.createElement("button");
+      toggle.className = "mermaid-toggle";
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.innerHTML = `<span>Hide Kill Chain Diagram</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>`;
+
+      const content = document.createElement("div");
+      content.className = "mermaid-content expanded";
+
+      const diagram = document.createElement("div");
+      diagram.classList.add("mermaid");
+      diagram.textContent = block.textContent;
+      content.appendChild(diagram);
+
+      toggle.addEventListener("click", () => {
+        const expanded = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!expanded));
+        content.classList.toggle("expanded");
+        if (!expanded) {
+          toggle.querySelector("span").textContent = "Hide Kill Chain Diagram";
+        } else {
+          toggle.querySelector("span").textContent = "View Kill Chain Diagram";
+        }
+      });
+
+      const fullscreenBtn = document.createElement("button");
+      fullscreenBtn.className = "mermaid-fullscreen-btn";
+      fullscreenBtn.title = "View fullscreen";
+      fullscreenBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg> View Fullscreen`;
+      fullscreenBtn.addEventListener("click", () => {
+        const overlay = document.createElement("div");
+        overlay.className = "mermaid-lightbox";
+        const inner = document.createElement("div");
+        inner.className = "mermaid-lightbox-inner";
+        inner.innerHTML = diagram.innerHTML;
+        overlay.appendChild(inner);
+        overlay.addEventListener("click", () => overlay.remove());
+        document.addEventListener("keydown", function handler(e) {
+          if (e.key === "Escape") { overlay.remove(); document.removeEventListener("keydown", handler); }
+        });
+        document.body.appendChild(overlay);
+      });
+
+      wrapper.appendChild(toggle);
+      content.appendChild(fullscreenBtn);
+      wrapper.appendChild(content);
+      pre.replaceWith(wrapper);
+    }
+    await mermaid.run({ querySelector: ".mermaid" });
+
+    // Image lightbox
+    const images = document.querySelectorAll(".prose img");
+    for (const img of images) {
+      img.addEventListener("click", () => {
+        const overlay = document.createElement("div");
+        overlay.className = "img-lightbox";
+        const clone = document.createElement("img");
+        clone.src = img.src;
+        clone.alt = img.alt || "";
+        overlay.appendChild(clone);
+        overlay.addEventListener("click", () => overlay.remove());
+        document.addEventListener("keydown", function handler(e) {
+          if (e.key === "Escape") { overlay.remove(); document.removeEventListener("keydown", handler); }
+        });
+        document.body.appendChild(overlay);
+      });
+    }
+  </script>
 </MainLayout>
