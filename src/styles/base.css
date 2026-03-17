@@ -1,12 +1,95 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* Google Sans */
+@font-face {
+  font-family: "Google Sans";
+  src: url("/fonts/google-sans/GoogleSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Google Sans";
+  src: url("/fonts/google-sans/GoogleSans-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Google Sans";
+  src: url("/fonts/google-sans/GoogleSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Google Sans";
+  src: url("/fonts/google-sans/GoogleSans-MediumItalic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Google Sans";
+  src: url("/fonts/google-sans/GoogleSans-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Google Sans";
+  src: url("/fonts/google-sans/GoogleSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Berkeley Mono */
+@font-face {
+  font-family: "Berkeley Mono";
+  src: url("/fonts/berkeley-mono/BerkeleyMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Berkeley Mono";
+  src: url("/fonts/berkeley-mono/BerkeleyMono-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Berkeley Mono";
+  src: url("/fonts/berkeley-mono/BerkeleyMono-Oblique.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Berkeley Mono";
+  src: url("/fonts/berkeley-mono/BerkeleyMono-Bold-Oblique.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 @theme {
-  --font-rubik: "Rubik Variable", sans-serif;
+  --font-sans: "Google Sans", system-ui, sans-serif;
+  --font-mono: "Berkeley Mono", ui-monospace, "SFMono-Regular", monospace;
 }
 
 body {
-  font-family: var(--font-rubik);
+  font-family: var(--font-sans);
   overflow-y: scroll;
 }
 
@@ -39,13 +122,19 @@ body {
 
 /* Inline code styling for prose */
 .prose :where(code):not(:where(pre code)) {
+  font-family: "Berkeley Mono", ui-monospace, monospace;
   background-color: #1e1e2e;
   border: 1px solid #313244;
   border-radius: 4px;
   padding: 2px 6px;
-  font-size: 0.875em;
+  font-size: 0.85em;
   color: #cdd6f4;
   word-break: break-word;
+}
+
+/* Code blocks use Berkeley Mono */
+.prose pre code {
+  font-family: "Berkeley Mono", ui-monospace, monospace;
 }
 
 .prose :where(code):not(:where(pre code))::before,
