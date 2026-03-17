@@ -4,6 +4,7 @@ description: "Small fun project with a friend that I decided to transform into a
 pubDate: "2022-01-16"
 featuredImage: "../images/introduction-to-reverse-engineering-part-1/Image04.png"
 featured: true
+category: "Reverse Engineering"
 ---
 
 Hello everyone, after a few months of not posting anything on my blog I decided to launch a small series of articles about reverse hardware more precisely about IoT (Internet of Things).

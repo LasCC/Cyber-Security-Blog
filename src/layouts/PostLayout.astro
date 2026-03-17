@@ -1,13 +1,36 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import { SITE_TITLE, SITE_URL } from "../config";
 
 import FormattedDate from "../components/FormattedDate.astro";
 import MainLayout from "./MainLayout.astro";
 
-type Props = CollectionEntry<"blog">["data"];
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  heroImage,
+  category,
+  readingTime,
+  headings = [],
+  prevPost,
+  nextPost,
+} = Astro.props;
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const tocHeadings = headings.filter((h: any) => h.depth === 2 || h.depth === 3);
+
+const categoryColors: Record<string, string> = {
+  THM: "bg-emerald-500/15 text-emerald-400 border-emerald-500/30",
+  "Malware Analysis": "bg-red-500/15 text-red-400 border-red-500/30",
+  "Reverse Engineering": "bg-purple-500/15 text-purple-400 border-purple-500/30",
+  XSS: "bg-amber-500/15 text-amber-400 border-amber-500/30",
+  CEH: "bg-blue-500/15 text-blue-400 border-blue-500/30",
+};
+
+const colorClass =
+  category && categoryColors[category]
+    ? categoryColors[category]
+    : "bg-zinc-500/15 text-zinc-400 border-zinc-500/30";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -47,52 +70,130 @@ const breadcrumbLd = {
 <MainLayout title={title} description={description} heroImage={heroImage} type="article" pubDate={pubDate} updatedDate={updatedDate}>
   <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
-  <section class="max-w-3xl mx-auto my-8">
-    <nav aria-label="Breadcrumb" class="text-sm text-zinc-400 mb-4">
-      <ol class="flex items-center gap-2">
-        <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
-        <li class="text-zinc-600">/</li>
-        <li><a href="/blog" class="hover:text-white transition-colors">Blog</a></li>
-        <li class="text-zinc-600">/</li>
-        <li class="text-zinc-200 truncate max-w-xs">{title}</li>
-      </ol>
-    </nav>
-    {
-      heroImage && (
-        <div class="border border-zinc-800">
-          <img
-            src={heroImage}
-            alt={title}
-            class="w-full aspect-[2/1] object-cover"
-            loading="eager"
-          />
-        </div>
-      )
-    }
-    <div>
-      <div class="py-6 border-b border-zinc-800">
-        <h1 class="text-center text-4xl font-semibold" transition:name={title}>
-          {title}
-        </h1>
-        <div class="font-light text-sm text-center">
-          <FormattedDate date={pubDate} />
+
+  <!-- Reading progress bar -->
+  <div id="progress-bar" class="fixed top-0 left-0 h-[2px] bg-lime-500 z-[100] transition-none" style="width: 0%"></div>
+
+  <div class="max-w-7xl mx-auto my-8 lg:flex lg:gap-8">
+    <!-- Main content -->
+    <section class="max-w-3xl mx-auto lg:mx-0 lg:flex-1 lg:min-w-0">
+      <nav aria-label="Breadcrumb" class="text-sm text-zinc-400 mb-4">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
+          <li class="text-zinc-600">/</li>
+          <li><a href="/blog" class="hover:text-white transition-colors">Blog</a></li>
+          <li class="text-zinc-600">/</li>
+          <li class="text-zinc-200 truncate max-w-xs">{title}</li>
+        </ol>
+      </nav>
+      {
+        heroImage && (
+          <div class="border border-zinc-800 rounded-lg overflow-hidden">
+            <img
+              src={heroImage}
+              alt={title}
+              class="w-full aspect-[2/1] object-cover"
+              loading="eager"
+            />
+          </div>
+        )
+      }
+      <div>
+        <div class="py-6 border-b border-zinc-800">
+          <h1 class="text-center text-4xl font-semibold" transition:name={title}>
+            {title}
+          </h1>
+          <div class="flex items-center justify-center gap-3 mt-3 text-sm text-zinc-400">
+            <FormattedDate date={pubDate} />
+            {readingTime && (
+              <span class="flex items-center gap-1">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-zinc-500">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+                {readingTime} min read
+              </span>
+            )}
+            {category && (
+              <span class={`text-xs font-medium px-2 py-0.5 rounded-full border ${colorClass}`}>
+                {category}
+              </span>
+            )}
+          </div>
           {
             updatedDate && (
-              <>
-                <span>&roarr;</span>
-                <div class="text-zinc-500 inline-block">
-                  <FormattedDate date={updatedDate} />
-                </div>
-              </>
+              <div class="text-center text-sm text-zinc-500 mt-1">
+                Updated: <FormattedDate date={updatedDate} />
+              </div>
             )
           }
         </div>
+        <article class="prose prose-invert py-8 mx-auto">
+          <slot />
+        </article>
       </div>
-      <article class="prose prose-invert py-8 mx-auto">
-        <slot />
-      </article>
-    </div>
-  </section>
+
+      <!-- Previous / Next navigation -->
+      {(prevPost || nextPost) && (
+        <nav aria-label="Post navigation" class="border-t border-zinc-800 pt-8 pb-4">
+          <div class="grid grid-cols-2 gap-4">
+            {prevPost ? (
+              <a href={`/blog/${prevPost.id}`} class="group flex flex-col p-4 rounded-lg border border-zinc-800 hover:border-zinc-700 hover:bg-white/[0.02] transition-colors">
+                <span class="text-xs text-zinc-500 mb-1 flex items-center gap-1">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                  Previous
+                </span>
+                <span class="text-sm font-medium text-zinc-300 group-hover:text-lime-400 transition-colors line-clamp-2">{prevPost.title}</span>
+              </a>
+            ) : <div />}
+            {nextPost ? (
+              <a href={`/blog/${nextPost.id}`} class="group flex flex-col items-end text-right p-4 rounded-lg border border-zinc-800 hover:border-zinc-700 hover:bg-white/[0.02] transition-colors">
+                <span class="text-xs text-zinc-500 mb-1 flex items-center gap-1">
+                  Next
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span>
+                <span class="text-sm font-medium text-zinc-300 group-hover:text-lime-400 transition-colors line-clamp-2">{nextPost.title}</span>
+              </a>
+            ) : <div />}
+          </div>
+        </nav>
+      )}
+    </section>
+
+    <!-- Table of Contents sidebar (desktop only) -->
+    {tocHeadings.length > 3 && (
+      <aside class="hidden lg:block w-56 shrink-0">
+        <nav class="sticky top-8" aria-label="Table of contents" id="toc-nav">
+          <h4 class="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-3">On this page</h4>
+          <ul class="space-y-1.5 text-sm border-l border-zinc-800">
+            {tocHeadings.map((h: any) => (
+              <li>
+                <a
+                  href={`#${h.slug}`}
+                  class={`block py-0.5 text-zinc-500 hover:text-zinc-200 transition-colors toc-link ${h.depth === 3 ? "pl-6 text-xs" : "pl-3"}`}
+                  data-slug={h.slug}
+                >
+                  {h.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </aside>
+    )}
+  </div>
+
+  <!-- Back to top button -->
+  <button
+    id="back-to-top"
+    class="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-all opacity-0 translate-y-4 pointer-events-none"
+    aria-label="Back to top"
+  >
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
+  </button>
+
   <script is:inline type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
     mermaid.initialize({
@@ -167,9 +268,27 @@ const breadcrumbLd = {
     }
     await mermaid.run({ querySelector: ".mermaid" });
 
+    // Copy button on code blocks
+    document.querySelectorAll("pre:not(.mermaid-wrapper pre)").forEach((pre) => {
+      const btn = document.createElement("button");
+      btn.className = "copy-code-btn";
+      btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
+      btn.addEventListener("click", async () => {
+        const code = pre.querySelector("code")?.textContent || pre.textContent || "";
+        await navigator.clipboard.writeText(code);
+        btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>`;
+        btn.classList.add("copied");
+        setTimeout(() => {
+          btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
+          btn.classList.remove("copied");
+        }, 2000);
+      });
+      pre.style.position = "relative";
+      pre.appendChild(btn);
+    });
+
     // Image lightbox
-    const images = document.querySelectorAll(".prose img");
-    for (const img of images) {
+    document.querySelectorAll(".prose img").forEach((img) => {
       img.addEventListener("click", () => {
         const overlay = document.createElement("div");
         overlay.className = "img-lightbox";
@@ -183,6 +302,55 @@ const breadcrumbLd = {
         });
         document.body.appendChild(overlay);
       });
+    });
+
+    // Reading progress bar
+    const progressBar = document.getElementById("progress-bar");
+    const article = document.querySelector("article");
+    if (progressBar && article) {
+      window.addEventListener("scroll", () => {
+        const rect = article.getBoundingClientRect();
+        const total = article.scrollHeight - window.innerHeight;
+        const scrolled = -rect.top;
+        const pct = Math.min(100, Math.max(0, (scrolled / total) * 100));
+        progressBar.style.width = pct + "%";
+      }, { passive: true });
+    }
+
+    // Back to top button
+    const backBtn = document.getElementById("back-to-top");
+    if (backBtn) {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+          backBtn.classList.remove("opacity-0", "translate-y-4", "pointer-events-none");
+          backBtn.classList.add("opacity-100", "translate-y-0");
+        } else {
+          backBtn.classList.add("opacity-0", "translate-y-4", "pointer-events-none");
+          backBtn.classList.remove("opacity-100", "translate-y-0");
+        }
+      }, { passive: true });
+      backBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    }
+
+    // TOC active state tracking
+    const tocLinks = document.querySelectorAll(".toc-link");
+    if (tocLinks.length > 0) {
+      const headingEls = Array.from(tocLinks).map((link) => {
+        const slug = link.getAttribute("data-slug");
+        return document.getElementById(slug);
+      }).filter(Boolean);
+
+      const observer = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            tocLinks.forEach((l) => l.classList.remove("toc-active"));
+            const activeLink = document.querySelector(`.toc-link[data-slug="${entry.target.id}"]`);
+            if (activeLink) activeLink.classList.add("toc-active");
+          }
+        }
+      }, { rootMargin: "-80px 0px -70% 0px" });
+
+      headingEls.forEach((el) => observer.observe(el));
     }
   </script>
 </MainLayout>

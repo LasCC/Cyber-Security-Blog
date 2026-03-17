@@ -41,7 +41,7 @@ const Search = (poststosearch: any) => {
           }}
         />
       </div>
-      <div className="pt-8">
+      <div>
         {fuse.search(input).map((result: any, index: any) => (
           <a href={`/blog/${result.item.id}`} key={index}>
             <div className="p-2 border-b border-zinc-800 hover:bg-zinc-800 hover:text-white transition-all ease-in-out duration-300 cursor-pointer">

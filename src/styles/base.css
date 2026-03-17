@@ -137,6 +137,41 @@ body {
   font-family: "Berkeley Mono", ui-monospace, monospace;
 }
 
+/* Blockquote / note styling */
+.prose blockquote {
+  border-left: 3px solid #e94560;
+  background: #0e0e0e;
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  font-style: normal;
+  color: #bac2de;
+  quotes: none;
+}
+
+.prose blockquote::before,
+.prose blockquote::after {
+  content: none;
+}
+
+.prose blockquote p::before,
+.prose blockquote p::after {
+  content: none;
+}
+
+.prose blockquote p {
+  margin: 0;
+}
+
+.prose blockquote p:first-child strong:first-child {
+  color: #e94560;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 .prose :where(code):not(:where(pre code))::before,
 .prose :where(code):not(:where(pre code))::after {
   content: none;
@@ -266,4 +301,45 @@ body {
   max-height: 95vh;
   object-fit: contain;
   border-radius: 4px;
+}
+
+/* Copy button on code blocks */
+.copy-code-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 6px;
+  background: #313244;
+  border: 1px solid #45475a;
+  border-radius: 6px;
+  color: #a6adc8;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.15s ease;
+  z-index: 10;
+}
+
+pre:hover .copy-code-btn {
+  opacity: 1;
+}
+
+.copy-code-btn:hover {
+  background: #45475a;
+  color: #cdd6f4;
+}
+
+.copy-code-btn.copied {
+  color: #a6e3a1;
+  border-color: #a6e3a1;
+}
+
+/* TOC active link */
+.toc-link {
+  border-left: 2px solid transparent;
+  margin-left: -1px;
+}
+
+.toc-active {
+  color: #cdd6f4 !important;
+  border-left-color: #a6e3a1;
 }

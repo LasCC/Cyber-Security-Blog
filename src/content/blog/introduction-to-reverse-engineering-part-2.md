@@ -4,6 +4,7 @@ description: "Small fun project with a friend that I decided to transform into a
 pubDate: 2022-08-23
 featuredImage: "./o5YDmWb.png"
 featured: true
+category: "Reverse Engineering"
 ---
 
 # Backdooring of the firmware WNAP320 from firmadyne

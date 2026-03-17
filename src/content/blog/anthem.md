@@ -2,6 +2,7 @@
 title: "Anthem - TryHackMe"
 author: Ludovic COULON
 pubDate: 2020-05-19
+category: "THM"
 description: "Writeup for the Anthem on TryHackMe"
 ---
 
