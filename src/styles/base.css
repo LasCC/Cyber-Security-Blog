@@ -88,6 +88,18 @@
   --font-mono: "Berkeley Mono", ui-monospace, "SFMono-Regular", monospace;
 }
 
+html,
+body,
+:root {
+  background: #070707;
+  color-scheme: dark;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  background: #070707;
+}
+
 body {
   font-family: var(--font-sans);
   overflow-y: scroll;
@@ -123,8 +135,8 @@ body {
 /* Inline code styling for prose */
 .prose :where(code):not(:where(pre code)) {
   font-family: "Berkeley Mono", ui-monospace, monospace;
-  background-color: #1e1e2e;
-  border: 1px solid #313244;
+  background-color: #111318;
+  border: 1px solid #232833;
   border-radius: 4px;
   padding: 2px 6px;
   font-size: 0.85em;
@@ -133,8 +145,15 @@ body {
 }
 
 /* Code blocks use Berkeley Mono */
+.prose pre {
+  background: #0f1117 !important;
+  border: 1px solid #232833;
+  border-radius: 8px;
+}
+
 .prose pre code {
   font-family: "Berkeley Mono", ui-monospace, monospace;
+  background: transparent !important;
 }
 
 /* Blockquote / note styling */
@@ -304,6 +323,10 @@ body {
 }
 
 /* Copy button on code blocks */
+.code-block-wrapper {
+  position: relative;
+}
+
 .copy-code-btn {
   position: absolute;
   top: 8px;
@@ -319,7 +342,7 @@ body {
   z-index: 10;
 }
 
-pre:hover .copy-code-btn {
+.code-block-wrapper:hover .copy-code-btn {
   opacity: 1;
 }
 
