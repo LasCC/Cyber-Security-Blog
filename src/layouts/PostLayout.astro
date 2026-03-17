@@ -194,167 +194,190 @@ const breadcrumbLd = {
     </svg>
   </button>
 
-  <script is:inline type="module">
-    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
-    mermaid.initialize({
-      startOnLoad: false,
-      theme: "dark",
-      themeVariables: {
-        primaryColor: "#1a1a2e",
-        primaryTextColor: "#fff",
-        primaryBorderColor: "#e94560",
-        lineColor: "#e94560",
-        secondaryColor: "#0f3460",
-        tertiaryColor: "#16213e",
-        fontFamily: "ui-monospace, monospace",
-        fontSize: "14px",
-      },
-    });
+  <script>
+    import mermaid from "mermaid";
 
-    // Wrap mermaid blocks in collapsible containers
-    const codeBlocks = document.querySelectorAll("pre > code.language-mermaid");
-    for (const block of codeBlocks) {
-      const pre = block.parentElement;
+    document.addEventListener('astro:page-load', async () => {
+      // Abort controller for cleaning up window event listeners on navigation
+      const controller = new AbortController();
+      const signal = controller.signal;
+      let tocObserver: IntersectionObserver | null = null;
 
-      const wrapper = document.createElement("div");
-      wrapper.className = "mermaid-wrapper";
+      // Clean up on next navigation
+      document.addEventListener('astro:before-swap', () => {
+        controller.abort();
+        if (tocObserver) tocObserver.disconnect();
+      }, { once: true });
 
-      const toggle = document.createElement("button");
-      toggle.className = "mermaid-toggle";
-      toggle.setAttribute("aria-expanded", "true");
-      toggle.innerHTML = `<span>Hide Kill Chain Diagram</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>`;
+      // Only run post-specific logic if we're on a post page
+      const article = document.querySelector("article");
+      if (!article) return;
 
-      const content = document.createElement("div");
-      content.className = "mermaid-content expanded";
-
-      const diagram = document.createElement("div");
-      diagram.classList.add("mermaid");
-      diagram.textContent = block.textContent;
-      content.appendChild(diagram);
-
-      toggle.addEventListener("click", () => {
-        const expanded = toggle.getAttribute("aria-expanded") === "true";
-        toggle.setAttribute("aria-expanded", String(!expanded));
-        content.classList.toggle("expanded");
-        if (!expanded) {
-          toggle.querySelector("span").textContent = "Hide Kill Chain Diagram";
-        } else {
-          toggle.querySelector("span").textContent = "View Kill Chain Diagram";
-        }
-      });
-
-      const fullscreenBtn = document.createElement("button");
-      fullscreenBtn.className = "mermaid-fullscreen-btn";
-      fullscreenBtn.title = "View fullscreen";
-      fullscreenBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg> View Fullscreen`;
-      fullscreenBtn.addEventListener("click", () => {
-        const overlay = document.createElement("div");
-        overlay.className = "mermaid-lightbox";
-        const inner = document.createElement("div");
-        inner.className = "mermaid-lightbox-inner";
-        inner.innerHTML = diagram.innerHTML;
-        overlay.appendChild(inner);
-        overlay.addEventListener("click", () => overlay.remove());
-        document.addEventListener("keydown", function handler(e) {
-          if (e.key === "Escape") { overlay.remove(); document.removeEventListener("keydown", handler); }
+      // Mermaid diagrams
+      const codeBlocks = document.querySelectorAll("pre > code.language-mermaid");
+      if (codeBlocks.length > 0) {
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: "dark",
+          themeVariables: {
+            primaryColor: "#1a1a2e",
+            primaryTextColor: "#fff",
+            primaryBorderColor: "#e94560",
+            lineColor: "#e94560",
+            secondaryColor: "#0f3460",
+            tertiaryColor: "#16213e",
+            fontFamily: "ui-monospace, monospace",
+            fontSize: "14px",
+          },
         });
-        document.body.appendChild(overlay);
-      });
 
-      wrapper.appendChild(toggle);
-      content.appendChild(fullscreenBtn);
-      wrapper.appendChild(content);
-      pre.replaceWith(wrapper);
-    }
-    await mermaid.run({ querySelector: ".mermaid" });
+        for (const block of codeBlocks) {
+          const pre = block.parentElement!;
 
-    // Copy button on code blocks
-    document.querySelectorAll("pre:not(.mermaid-wrapper pre)").forEach((pre) => {
-      const wrapper = document.createElement("div");
-      wrapper.className = "code-block-wrapper";
-      pre.parentNode?.insertBefore(wrapper, pre);
-      wrapper.appendChild(pre);
+          const wrapper = document.createElement("div");
+          wrapper.className = "mermaid-wrapper";
 
-      const btn = document.createElement("button");
-      btn.className = "copy-code-btn";
-      btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
-      btn.addEventListener("click", async () => {
-        const code = pre.querySelector("code")?.textContent || pre.textContent || "";
-        await navigator.clipboard.writeText(code);
-        btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>`;
-        btn.classList.add("copied");
-        setTimeout(() => {
-          btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
-          btn.classList.remove("copied");
-        }, 2000);
-      });
-      wrapper.appendChild(btn);
-    });
+          const toggle = document.createElement("button");
+          toggle.className = "mermaid-toggle";
+          toggle.setAttribute("aria-expanded", "true");
+          toggle.innerHTML = `<span>Hide Kill Chain Diagram</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>`;
 
-    // Image lightbox
-    document.querySelectorAll(".prose img").forEach((img) => {
-      img.addEventListener("click", () => {
-        const overlay = document.createElement("div");
-        overlay.className = "img-lightbox";
-        const clone = document.createElement("img");
-        clone.src = img.src;
-        clone.alt = img.alt || "";
-        overlay.appendChild(clone);
-        overlay.addEventListener("click", () => overlay.remove());
-        document.addEventListener("keydown", function handler(e) {
-          if (e.key === "Escape") { overlay.remove(); document.removeEventListener("keydown", handler); }
-        });
-        document.body.appendChild(overlay);
-      });
-    });
+          const content = document.createElement("div");
+          content.className = "mermaid-content expanded";
 
-    // Reading progress bar
-    const progressBar = document.getElementById("progress-bar");
-    const article = document.querySelector("article");
-    if (progressBar && article) {
-      window.addEventListener("scroll", () => {
-        const rect = article.getBoundingClientRect();
-        const total = article.scrollHeight - window.innerHeight;
-        const scrolled = -rect.top;
-        const pct = Math.min(100, Math.max(0, (scrolled / total) * 100));
-        progressBar.style.width = pct + "%";
-      }, { passive: true });
-    }
+          const diagram = document.createElement("div");
+          diagram.classList.add("mermaid");
+          diagram.textContent = block.textContent;
+          content.appendChild(diagram);
 
-    // Back to top button
-    const backBtn = document.getElementById("back-to-top");
-    if (backBtn) {
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 400) {
-          backBtn.classList.remove("opacity-0", "translate-y-4", "pointer-events-none");
-          backBtn.classList.add("opacity-100", "translate-y-0");
-        } else {
-          backBtn.classList.add("opacity-0", "translate-y-4", "pointer-events-none");
-          backBtn.classList.remove("opacity-100", "translate-y-0");
+          toggle.addEventListener("click", () => {
+            const expanded = toggle.getAttribute("aria-expanded") === "true";
+            toggle.setAttribute("aria-expanded", String(!expanded));
+            content.classList.toggle("expanded");
+            const label = toggle.querySelector("span");
+            if (label) {
+              label.textContent = !expanded ? "Hide Kill Chain Diagram" : "View Kill Chain Diagram";
+            }
+          });
+
+          const fullscreenBtn = document.createElement("button");
+          fullscreenBtn.className = "mermaid-fullscreen-btn";
+          fullscreenBtn.title = "View fullscreen";
+          fullscreenBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg> View Fullscreen`;
+          fullscreenBtn.addEventListener("click", () => {
+            const overlay = document.createElement("div");
+            overlay.className = "mermaid-lightbox";
+            const inner = document.createElement("div");
+            inner.className = "mermaid-lightbox-inner";
+            inner.innerHTML = diagram.innerHTML;
+            overlay.appendChild(inner);
+            overlay.addEventListener("click", () => overlay.remove());
+            document.addEventListener("keydown", function handler(e) {
+              if (e.key === "Escape") { overlay.remove(); document.removeEventListener("keydown", handler); }
+            });
+            document.body.appendChild(overlay);
+          });
+
+          wrapper.appendChild(toggle);
+          content.appendChild(fullscreenBtn);
+          wrapper.appendChild(content);
+          pre.replaceWith(wrapper);
         }
-      }, { passive: true });
-      backBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-    }
+        await mermaid.run({ querySelector: ".mermaid" });
+      }
 
-    // TOC active state tracking
-    const tocLinks = document.querySelectorAll(".toc-link");
-    if (tocLinks.length > 0) {
-      const headingEls = Array.from(tocLinks).map((link) => {
-        const slug = link.getAttribute("data-slug");
-        return document.getElementById(slug);
-      }).filter(Boolean);
+      // Copy button on code blocks
+      document.querySelectorAll("pre:not(.mermaid-wrapper pre)").forEach((pre) => {
+        // Skip if already wrapped (prevents duplicates on re-init)
+        if (pre.parentElement?.classList.contains("code-block-wrapper")) return;
 
-      const observer = new IntersectionObserver((entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            tocLinks.forEach((l) => l.classList.remove("toc-active"));
-            const activeLink = document.querySelector(`.toc-link[data-slug="${entry.target.id}"]`);
-            if (activeLink) activeLink.classList.add("toc-active");
+        const wrapper = document.createElement("div");
+        wrapper.className = "code-block-wrapper";
+        pre.parentNode?.insertBefore(wrapper, pre);
+        wrapper.appendChild(pre);
+
+        const btn = document.createElement("button");
+        btn.className = "copy-code-btn";
+        btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
+        btn.addEventListener("click", async () => {
+          const code = pre.querySelector("code")?.textContent || pre.textContent || "";
+          await navigator.clipboard.writeText(code);
+          btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>`;
+          btn.classList.add("copied");
+          setTimeout(() => {
+            btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
+            btn.classList.remove("copied");
+          }, 2000);
+        });
+        wrapper.appendChild(btn);
+      });
+
+      // Image lightbox
+      document.querySelectorAll<HTMLImageElement>(".prose img").forEach((img) => {
+        img.addEventListener("click", () => {
+          const overlay = document.createElement("div");
+          overlay.className = "img-lightbox";
+          const clone = document.createElement("img");
+          clone.src = img.src;
+          clone.alt = img.alt || "";
+          overlay.appendChild(clone);
+          overlay.addEventListener("click", () => overlay.remove());
+          document.addEventListener("keydown", function handler(e) {
+            if (e.key === "Escape") { overlay.remove(); document.removeEventListener("keydown", handler); }
+          });
+          document.body.appendChild(overlay);
+        });
+      });
+
+      // Reading progress bar
+      const progressBar = document.getElementById("progress-bar");
+      if (progressBar && article) {
+        window.addEventListener("scroll", () => {
+          const rect = article.getBoundingClientRect();
+          const total = article.scrollHeight - window.innerHeight;
+          const scrolled = -rect.top;
+          const pct = Math.min(100, Math.max(0, (scrolled / total) * 100));
+          progressBar.style.width = pct + "%";
+        }, { passive: true, signal });
+      }
+
+      // Back to top button
+      const backBtn = document.getElementById("back-to-top");
+      if (backBtn) {
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 400) {
+            backBtn.classList.remove("opacity-0", "translate-y-4", "pointer-events-none");
+            backBtn.classList.add("opacity-100", "translate-y-0");
+          } else {
+            backBtn.classList.add("opacity-0", "translate-y-4", "pointer-events-none");
+            backBtn.classList.remove("opacity-100", "translate-y-0");
           }
-        }
-      }, { rootMargin: "-80px 0px -70% 0px" });
+        }, { passive: true, signal });
+        backBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+      }
 
-      headingEls.forEach((el) => observer.observe(el));
-    }
+      // TOC active state tracking
+      const tocLinks = document.querySelectorAll(".toc-link");
+      if (tocLinks.length > 0) {
+        const headingEls: Element[] = Array.from(tocLinks).reduce<Element[]>((acc, link) => {
+          const slug = link.getAttribute("data-slug");
+          const el = slug ? document.getElementById(slug) : null;
+          if (el) acc.push(el);
+          return acc;
+        }, []);
+
+        tocObserver = new IntersectionObserver((entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              tocLinks.forEach((l) => l.classList.remove("toc-active"));
+              const activeLink = document.querySelector(`.toc-link[data-slug="${entry.target.id}"]`);
+              if (activeLink) activeLink.classList.add("toc-active");
+            }
+          }
+        }, { rootMargin: "-80px 0px -70% 0px" });
+
+        headingEls.forEach((el) => tocObserver!.observe(el));
+      }
+    });
   </script>
 </MainLayout>
