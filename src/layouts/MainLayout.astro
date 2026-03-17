@@ -39,14 +39,5 @@ const { title, description, heroImage, type, pubDate, updatedDate } = Astro.prop
       <slot />
     </main>
     <Footer />
-    <script is:inline>
-      // Track pageviews on Astro view transitions (SPA navigation)
-      document.addEventListener('astro:page-load', () => {
-        if (window.posthog && window._posthogFirstLoad) {
-          posthog.capture('$pageview');
-        }
-        window._posthogFirstLoad = true;
-      });
-    </script>
   </body>
 </html>
