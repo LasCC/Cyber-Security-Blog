@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /ingest/
 
 Sitemap: https://ludovic-coulon.com/sitemap-index.xml
