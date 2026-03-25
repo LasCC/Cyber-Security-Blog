@@ -10,7 +10,7 @@ const Search = (poststosearch: any) => {
 
   return (
     <>
-      <div className="flex items-center border border-zinc-800 px-3 py-2 gap-2 shadow-sm sm:text-sm">
+      <div className="flex items-center border border-zinc-200 dark:border-zinc-800 px-3 py-2 gap-2 shadow-sm sm:text-sm">
         <span className="pointer-events-none text-gray-500">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +44,7 @@ const Search = (poststosearch: any) => {
       <div>
         {fuse.search(input).map((result: any, index: any) => (
           <a href={`/blog/${result.item.id}`} key={index}>
-            <div className="p-2 border-b border-zinc-800 hover:bg-zinc-800 hover:text-white transition-all ease-in-out duration-300 cursor-pointer">
+            <div className="p-2 border-b border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-white transition-all ease-in-out duration-300 cursor-pointer">
               {result.item.data.title}
             </div>
           </a>

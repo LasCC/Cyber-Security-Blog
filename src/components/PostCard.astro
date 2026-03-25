@@ -26,7 +26,7 @@ const colorClass =
 ---
 
 <li class="group">
-  <a href={`/blog/${href}`} class="block p-4 -mx-4 rounded-lg transition-colors hover:bg-white/[0.03]">
+  <a href={`/blog/${href}`} class="block p-4 -mx-4 rounded-lg transition-colors hover:bg-black/[0.03] dark:hover:bg-white/[0.03]">
     <div class="space-y-2 flex flex-col">
       <div class="flex items-center gap-3">
         <span class="font-light text-sm text-zinc-500">
@@ -41,7 +41,7 @@ const colorClass =
       <h2 class="font-medium group-hover:text-lime-400 transition-colors" transition:name={title}>
         {title}
       </h2>
-      <p class="font-light text-sm text-zinc-400 line-clamp-2">{desc}</p>
+      <p class="font-light text-sm text-zinc-600 dark:text-zinc-400 line-clamp-2">{desc}</p>
     </div>
   </a>
 </li>

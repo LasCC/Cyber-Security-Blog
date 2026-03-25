@@ -1,5 +1,6 @@
 ---
 import { SITE_LOGO, SITE_TITLE } from "../config";
+import ThemeToggle from "./ThemeToggle.astro";
 ---
 
 <header
@@ -14,22 +15,25 @@ import { SITE_LOGO, SITE_TITLE } from "../config";
       )
     }
   </a>
-  <nav aria-label="Main navigation">
-    <ul class="flex items-center justify-center space-x-5">
-      <li>
-        <a href="/" class="hover:border-b-2 hover:border-lime-500">Home</a>
-      </li>
-      <li>
-        <a href="/blog" class="hover:border-b-2 hover:border-lime-500">Posts</a>
-      </li>
-      <li>
-        <a
-          href="https://mindmap.ludovic-coulon.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:border-b-2 hover:border-lime-500">Mindmaps</a
-        >
-      </li>
-    </ul>
-  </nav>
+  <div class="flex items-center gap-4">
+    <nav aria-label="Main navigation">
+      <ul class="flex items-center justify-center space-x-5">
+        <li>
+          <a href="/" class="hover:border-b-2 hover:border-lime-500">Home</a>
+        </li>
+        <li>
+          <a href="/blog" class="hover:border-b-2 hover:border-lime-500">Posts</a>
+        </li>
+        <li>
+          <a
+            href="https://mindmap.ludovic-coulon.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:border-b-2 hover:border-lime-500">Mindmaps</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <ThemeToggle />
+  </div>
 </header>

@@ -30,7 +30,7 @@ const heroColorClass =
 
 {heroPost && (
   <a href={`/blog/${heroPost.id}`} class="group block mb-8">
-    <div class="relative overflow-hidden rounded-xl border border-zinc-800 bg-linear-to-br from-zinc-900 to-zinc-950 p-6 md:p-8 transition-all hover:border-zinc-700 hover:from-zinc-800/80 hover:to-zinc-900/80">
+    <div class="relative overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-linear-to-br from-zinc-50 to-zinc-100 dark:from-zinc-900 dark:to-zinc-950 p-6 md:p-8 transition-all hover:border-zinc-300 dark:hover:border-zinc-700 hover:from-zinc-100/80 hover:to-zinc-200/80 dark:hover:from-zinc-800/80 dark:hover:to-zinc-900/80">
       <div class="absolute top-0 right-0 w-64 h-64 bg-lime-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-lime-500/10 transition-colors"></div>
       <div class="relative">
         <div class="flex items-center gap-3 mb-3">
@@ -46,7 +46,7 @@ const heroColorClass =
         <h3 class="text-2xl font-semibold mb-3 group-hover:text-lime-400 transition-colors" transition:name={heroPost.data.title}>
           {heroPost.data.title}
         </h3>
-        <p class="text-zinc-400 font-light leading-relaxed max-w-2xl">
+        <p class="text-zinc-600 dark:text-zinc-400 font-light leading-relaxed max-w-2xl">
           {heroPost.data.description}
         </p>
         <span class="inline-flex items-center gap-1 mt-4 text-sm text-lime-500 font-medium group-hover:gap-2 transition-all">

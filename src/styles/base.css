@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+@custom-variant dark (&:where(.dark, .dark *));
 
 /* Google Sans */
 @font-face {
@@ -88,16 +89,43 @@
   --font-mono: "Berkeley Mono", ui-monospace, "SFMono-Regular", monospace;
 }
 
-html,
-body,
+/* Theme color variables */
 :root {
-  background: #070707;
+  --bg-page: #ffffff;
+  --bg-inline-code: #f1f5f9;
+  --border-inline-code: #e2e8f0;
+  --text-inline-code: #334155;
+  --bg-blockquote: #f8fafc;
+  --text-blockquote: #475569;
+  --scrollbar-thumb: #d1d5db;
+  --scrollbar-thumb-hover: #9ca3af;
+  --toc-active-text: #1e293b;
+  --toc-active-border: #65a30d;
+  color-scheme: light;
+}
+
+.dark {
+  --bg-page: #070707;
+  --bg-inline-code: #111318;
+  --border-inline-code: #232833;
+  --text-inline-code: #cdd6f4;
+  --bg-blockquote: #0e0e0e;
+  --text-blockquote: #bac2de;
+  --scrollbar-thumb: #888;
+  --scrollbar-thumb-hover: #555;
+  --toc-active-text: #cdd6f4;
+  --toc-active-border: #a6e3a1;
   color-scheme: dark;
+}
+
+html,
+body {
+  background: var(--bg-page);
 }
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  background: #070707;
+  background: var(--bg-page);
 }
 
 body {
@@ -116,35 +144,35 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: var(--scrollbar-thumb);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: var(--scrollbar-thumb-hover);
 }
 
 ::-webkit-scrollbar-thumb:horizontal {
-  background: #888;
+  background: var(--scrollbar-thumb);
 }
 
 ::-webkit-scrollbar-thumb:horizontal:hover {
-  background: #555;
+  background: var(--scrollbar-thumb-hover);
 }
 
 /* Inline code styling for prose */
 .prose :where(code):not(:where(pre code)) {
   font-family: "Berkeley Mono", ui-monospace, monospace;
-  background-color: #111318;
-  border: 1px solid #232833;
+  background-color: var(--bg-inline-code);
+  border: 1px solid var(--border-inline-code);
   border-radius: 4px;
   padding: 2px 6px;
   font-size: 0.85em;
-  color: #cdd6f4;
+  color: var(--text-inline-code);
   word-break: break-word;
 }
 
-/* Code blocks use Berkeley Mono */
+/* Code blocks use Berkeley Mono (always dark themed) */
 .prose pre {
   background: #0f1117 !important;
   border: 1px solid #232833;
@@ -159,12 +187,12 @@ body {
 /* Blockquote / note styling */
 .prose blockquote {
   border-left: 3px solid #e94560;
-  background: #0e0e0e;
+  background: var(--bg-blockquote);
   border-radius: 0 8px 8px 0;
   padding: 1rem 1.25rem;
   margin: 1.5rem 0;
   font-style: normal;
-  color: #bac2de;
+  color: var(--text-blockquote);
   quotes: none;
 }
 
@@ -322,7 +350,7 @@ body {
   border-radius: 4px;
 }
 
-/* Copy button on code blocks */
+/* Copy button on code blocks (stays dark themed) */
 .code-block-wrapper {
   position: relative;
 }
@@ -363,6 +391,6 @@ body {
 }
 
 .toc-active {
-  color: #cdd6f4 !important;
-  border-left-color: #a6e3a1;
+  color: var(--toc-active-text) !important;
+  border-left-color: var(--toc-active-border);
 }

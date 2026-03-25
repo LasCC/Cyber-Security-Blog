@@ -1,0 +1,61 @@
+---
+---
+
+<button
+  id="theme-toggle"
+  class="p-2 rounded-lg text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+  aria-label="Toggle theme"
+  title="Toggle theme"
+>
+  <svg id="theme-icon-light" class="hidden w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+    <circle cx="12" cy="12" r="5" />
+    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+  </svg>
+  <svg id="theme-icon-dark" class="hidden w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+  </svg>
+  <svg id="theme-icon-system" class="hidden w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+    <line x1="8" y1="21" x2="16" y2="21" />
+    <line x1="12" y1="17" x2="12" y2="21" />
+  </svg>
+</button>
+
+<script>
+  function initThemeToggle() {
+    const btn = document.getElementById("theme-toggle");
+    if (!btn) return;
+
+    const modes = ["system", "light", "dark"] as const;
+    type Theme = (typeof modes)[number];
+
+    function getTheme(): Theme {
+      return (localStorage.getItem("theme") as Theme) || "dark";
+    }
+
+    function updateIcon(theme: Theme) {
+      document.getElementById("theme-icon-light")!.classList.toggle("hidden", theme !== "light");
+      document.getElementById("theme-icon-dark")!.classList.toggle("hidden", theme !== "dark");
+      document.getElementById("theme-icon-system")!.classList.toggle("hidden", theme !== "system");
+    }
+
+    function applyTheme(theme: Theme) {
+      const isDark = theme === "dark" || (theme === "system" && matchMedia("(prefers-color-scheme: dark)").matches);
+      document.documentElement.classList.toggle("dark", isDark);
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute("content", isDark ? "#070707" : "#ffffff");
+      updateIcon(theme);
+    }
+
+    applyTheme(getTheme());
+
+    btn.addEventListener("click", () => {
+      const current = getTheme();
+      const next = modes[(modes.indexOf(current) + 1) % modes.length];
+      localStorage.setItem("theme", next);
+      applyTheme(next);
+    });
+  }
+
+  document.addEventListener("astro:page-load", initThemeToggle);
+</script>

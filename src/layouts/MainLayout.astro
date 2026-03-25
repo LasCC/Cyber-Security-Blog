@@ -24,6 +24,9 @@ const { title, description, heroImage, type, pubDate, updatedDate } = Astro.prop
     <BaseHead {title} {description} image={heroImage} {type} {pubDate} {updatedDate} />
     <ClientRouter />
     <script is:inline>
+      (function(){function a(){var t=localStorage.getItem('theme')||'dark';var d=t==='dark'||(t==='system'&&matchMedia('(prefers-color-scheme:dark)').matches);document.documentElement.classList.toggle('dark',d);var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',d?'#070707':'#ffffff')}a();document.addEventListener('astro:after-swap',a);matchMedia('(prefers-color-scheme:dark)').addEventListener('change',function(){if((localStorage.getItem('theme')||'system')==='system')a()})})();
+    </script>
+    <script is:inline>
       !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group identify setPersonProperties setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags resetGroups onFeatureFlags addFeatureFlagsHandler onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
       posthog.init('phc_sgDN3ysJw4iXxQKV8mLLejEkPLr13Tgr4vvE4f64a8h', {
         api_host: '/ingest',
@@ -32,7 +35,7 @@ const { title, description, heroImage, type, pubDate, updatedDate } = Astro.prop
       });
     </script>
   </head>
-  <body class="bg-[#070707] text-stone-200">
+  <body class="text-zinc-900 dark:text-stone-200">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-lime-500 focus:text-black focus:px-4 focus:py-2 focus:rounded">Skip to content</a>
     <Header />
     <main id="main-content" class="max-w-5xl px-3 md:px-6 mx-auto">
